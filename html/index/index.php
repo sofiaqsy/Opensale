@@ -13,7 +13,7 @@
       Categorias
   <div class="section group">
      <div class="grid_1_of_2 images_1_of_2">
-       sdrefdfffffffffffffffffffffffffffffffffffffffff
+       sdrefdfffffffffffffffffffffffffffffffffffffffffmi cambio
      </div>
 
   </div>
