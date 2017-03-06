@@ -14,9 +14,10 @@
   <div class="section group">
      <div class="grid_1_of_2 images_1_of_2">
        sdrefdfffffffffffffffffffffffffffffffffffffffffmi cambio
+       otro cambio DE KEYLA MEDIANTE LA LAPTOP DE DIEGO
+       HAZ LA PRUEBA PE :V QUE ME AÑEJO XD
      </div>
-
-  </div>
+  </div
 
 
     </div>
