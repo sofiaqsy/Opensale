@@ -19,8 +19,6 @@
               <div class="col-md-2">
                 <center>
 
-
-
               </center>
 
 
@@ -41,7 +39,7 @@
     </div>
     <div class="col-md-8">
       Productos
-
+ yo hice un cambio aqui xD
       <div class="">
       <div class="section group">
         <div class="grid_1_of_3 images_1_of_3">
