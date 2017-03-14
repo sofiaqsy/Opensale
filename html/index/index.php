@@ -9,20 +9,40 @@
 <div class="mbr-section__container container mbr-section__container--isolated">
 
   <div class="row">
+    <!-- inicio de la  seccion cabeceza 1-->
     <div class="col-md-4">
-      Categorias
-<div class="categorias">
-
-</div>
 
   <div class="section group">
-     <div class="grid_1_of_2 images_1_of_2">
+     <br><div class="grid_1_of_2 images_1_of_2">
        Tipos de Celulares
      </div>
-  </div
+
+     <select class="form-control">
+  <option>TODOS</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+  <option>5</option>
+</select>
+<br>
+<div class="grid_1_of_2 images_1_of_2">
+Modelo
+</div>
+
+<select class="form-control">
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+</select>
+
+
 
     </div>
   </div>
+  <!-- fin de la  seccion cabeceza 1-->
+
     <div class="col-md-8">
       Productos
 
@@ -32,6 +52,7 @@
         <a href="#">
         <img src="views/app/images/productos/img3.jpg" title="Adamant an Industrial Category Flat Bootstrap Responsive Web Template" alt="Adamant an Industrial Category Flat Bootstrap Responsive Web Template Mobile website template Free">
         <h2>BLUE</h2>
+
         </a>
         </div>
       <div class="grid_1_of_3 images_1_of_3">
@@ -53,12 +74,107 @@
       </a>
       </div>
       <div class="clear"></div>
+
+
+      <div class="row categorias_con_foros categorias">
+        <div class="col-sm-12">
+            <div class="row titulo_categoria">Categorias </div>
+
+            <div class="row cajas">
+              <div class="col-md-2">
+                <center>
+
+
+
+              </center>
+
+
+
+
+              </div>
+              <div class="col-md-10">
+                <blockquote>
+
+                </blockquote>
+                <hr />
+
+              </div>
+            </div>
+        </div>
+>>>>>>> 2deed161ea1b3a337041037043ef9a65f08e13f5
+      </div>
+
+    </div>
+    <div class="col-md-8">
+
+      <div class="features_items">
+          <h2 class="titleproducto text-center">Productos</h2>
+          <div class="col-sm-4">
+            <div class="product-image-wrapper">
+              <div class="single-products">
+                  <div class="productinfo text-center">
+                    <img src="views/app/images/productos/img3.jpg" alt="" />
+                    <h2>$99</h2>
+                    <p>Iphone 6s</p>
+                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                  </div>
+                  <div class="product-overlay">
+                    <div class="overlay-content">
+                      <h2>$56</h2>
+                      <p>Iphone 6s</p>
+                      <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                    </div>
+                  </div>
+              </div>
+              <div class="choose">
+                <ul class="nav nav-pills nav-justified">
+                  <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+                  <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
       </div>
 
 
 
+      <div class="grid_1_of_3 images_1_of_3">
 
-    </div>
+      </div>
+
+
+
+      <div class="features_items">
+          <h2 class="titleproducto text-center">Productos</h2>
+          <div class="col-sm-4">
+            <div class="product-image-wrapper">
+              <div class="single-products">
+                  <div class="productinfo text-center">
+                    <img src="views/app/images/productos/img3.jpg" alt="" />
+                    <h2>$99</h2>
+                    <p>Iphone 6s</p>
+                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                  </div>
+                  <div class="product-overlay">
+                    <div class="overlay-content">
+                      <h2>$56</h2>
+                      <p>Iphone 6s</p>
+                      <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                    </div>
+                  </div>
+              </div>
+              <div class="choose">
+                <ul class="nav nav-pills nav-justified">
+                  <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+                  <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      </div>
+
+
+
   </div>
 </div>
 </section>

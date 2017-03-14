@@ -573,6 +573,10 @@ li.login a span {
     top: 0;
 }
 
+.categorias{
+margin-top: 30px;
+
+}
 .login-form input[type="text"], .login-form input[type="password"] {
     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
     border: 1px solid #8fa4b9;

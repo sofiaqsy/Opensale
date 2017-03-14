@@ -12,6 +12,7 @@ define('DB_USER','root');
 define('DB_PASS','');
 define('DB_NAME','opensale');
 
+
 #Constantes de la APP
 define('HTML_DIR','html/');
 define('APP_TITLE','Opensale');
@@ -25,12 +26,15 @@ define('PHPMAILER_PASS','Prinick2016');
 define('PHPMAILER_PORT',465);
 
 
+
 #Estructura
 require('vendor/autoload.php');
 require('core/models/class.Conexion.php');
 require('core/bin/functions/Encrypt.php');
-
+require('core/bin/functions/EmailTemplate.php');
+require('core/bin/functions/Users.php');
 require('core/bin/functions/UrlAmigable.php');
 
+$_users = Users();
 
 ?>
