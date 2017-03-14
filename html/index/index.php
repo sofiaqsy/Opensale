@@ -48,7 +48,7 @@
               <div class="single-products">
                   <div class="productinfo text-center">
                     <img src="views/app/images/productos/img3.jpg" alt="" />
-                    <h2>$56</h2>
+                    <h2>$99</h2>
                     <p>Iphone 6s</p>
                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                   </div>

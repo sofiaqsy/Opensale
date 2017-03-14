@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="views/fontawesome/css/fonts.css" type="text/css">
   <link rel="stylesheet" href="views/app/css/format.css" type="text/css">
   <link rel="stylesheet" href="views/style/style.css" type="text/css">
-  <link rel="stylesheet" href="views/style/main.css" type="text/css">
+  <link rel="stylesheet" href="views/style/mainproducto.css" type="text/css">
 
   <script src="views/app/js/generales.js"></script>
 
