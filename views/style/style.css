@@ -9,6 +9,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     display: block;
 }
 
+.categorias{
+
+  height: 100px;
+  width: 60px;
+  background: #eee;
+
+}
+
 .mbr-section__container--isolated {
     padding-bottom: 83px;
     padding-top: 20px;

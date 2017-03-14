@@ -11,16 +11,18 @@
   <div class="row">
     <div class="col-md-4">
       Categorias
+<div class="categorias">
+
+</div>
+
   <div class="section group">
      <div class="grid_1_of_2 images_1_of_2">
-       sdrefdfffffffffffffffffffffffffffffffffffffffffmi cambio
-       otro cambio DE KEYLA MEDIANTE LA LAPTOP DE DIEGO
-       HAZ LA PRUEBA PE :V QUE ME AÑEJO XD
+       Tipos de Celulares
      </div>
   </div
 
-
     </div>
+  </div>
     <div class="col-md-8">
       Productos
 
@@ -29,25 +31,25 @@
         <div class="grid_1_of_3 images_1_of_3">
         <a href="#">
         <img src="views/app/images/productos/img3.jpg" title="Adamant an Industrial Category Flat Bootstrap Responsive Web Template" alt="Adamant an Industrial Category Flat Bootstrap Responsive Web Template Mobile website template Free">
-        <h2>Adamant</h2>
+        <h2>BLUE</h2>
         </a>
         </div>
       <div class="grid_1_of_3 images_1_of_3">
       <a href="#">
       <img src="views/app/images/productos/img1.jpg" title="Adamant an Industrial Category Flat Bootstrap Responsive Web Template" alt="Adamant an Industrial Category Flat Bootstrap Responsive Web Template Mobile website template Free">
-      <h2>Adamant</h2>
+      <h2>BLUE S2</h2>
       </a>
       </div>
       <div class="grid_1_of_3 images_1_of_3">
       <a href="#">
       <img src="views/app/images/productos/img2.jpg" title="Personal Login Form Responsive Widget Template" alt="Personal Login Form Responsive Widget Template Mobile website template Free">
-      <h2>Personal Login Form</h2>
+      <h2>SAMSUNG GALAXY S3</h2>
       </a>
       </div>
       <div class="grid_1_of_3 images_1_of_3">
       <a href="#">
       <img src="views/app/images/productos/img2.jpg" title="Personal Login Form Responsive Widget Template" alt="Personal Login Form Responsive Widget Template Mobile website template Free">
-      <h2>Personal Login Form</h2>
+      <h2>SAMSUNG GALAXY A1</h2>
       </a>
       </div>
       <div class="clear"></div>
