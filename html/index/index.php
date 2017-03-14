@@ -10,15 +10,33 @@
 
   <div class="row">
     <div class="col-md-4">
-      Categorias
-  <div class="section group">
-     <div class="grid_1_of_2 images_1_of_2">
-       sdrefdfffffffffffffffffffffffffffffffffffffffffmi cambio
-       otro cambio DE KEYLA MEDIANTE LA LAPTOP DE DIEGO
-       HAZ LA PRUEBA PE :V QUE ME AÑEJO XD
-     </div>
-  </div
 
+      <div class="row categorias_con_foros categorias">
+        <div class="col-sm-12">
+            <div class="row titulo_categoria">Categorias </div>
+
+            <div class="row cajas">
+              <div class="col-md-2">
+                <center>
+
+
+
+              </center>
+
+
+
+
+              </div>
+              <div class="col-md-10">
+                <blockquote>
+
+                </blockquote>
+                <hr />
+
+              </div>
+            </div>
+        </div>
+      </div>
 
     </div>
     <div class="col-md-8">

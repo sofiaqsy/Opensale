@@ -1,15 +1,19 @@
 function goReg() {
-  var connect, form, response, result, user, pass, email, tyc, pass_dos;
-  user = __('user_reg').value;
+  var connect, form, response, result, user_nom, user_ape, user_DNI,user_celular,pass_reg, email, tyc, pass_dos;
+  user_nom = __('user_nom').value;
+  user_ape= __('user_ape').value;
+  user_DNI= __('user_DNI').value;
+  user_celular= __('user_celular').value;
   pass = __('pass_reg').value;
   email = __('email_reg').value;
   pass_dos = __('pass_reg_dos').value;
   tyc = __('tyc_reg').checked ? true : false;
 
   if(true == tyc) {
-    if(user != '' && pass != '' && pass_dos != '' && email != '') {
+
+    if(user_nom != '' && user_ape != ''&& user_DNI != ''&& user_celular != '' && pass != '' && pass_dos != '' && email != '') {
       if(pass == pass_dos) {
-        form = 'user=' + user + '&pass=' + pass + '&email=' + email;
+        form = 'user_nom=' + user_nom+ '&user_ape=' + user_ape+ '&user_DNI=' + user_DNI+ '&user_celular=' + user_celular + '&pass=' + pass + '&email=' + email;
         connect = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
         connect.onreadystatechange = function() {
           if(connect.readyState == 4 && connect.status == 200) {
@@ -52,6 +56,7 @@ function goReg() {
       __('_AJAX_REG_').innerHTML = result;
     }
   } else {
+  
     result = '<div class="alert alert-dismissible alert-danger">';
     result += '<button type="button" class="close" data-dismiss="alert">x</button>';
     result += '<h4>ERROR</h4>';
