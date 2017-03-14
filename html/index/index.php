@@ -19,6 +19,8 @@
               <div class="col-md-2">
                 <center>
 
+
+
               </center>
 
 
@@ -38,41 +40,37 @@
 
     </div>
     <div class="col-md-8">
-      Productos
- yo hice un cambio aqui xD
-      <div class="">
-      <div class="section group">
-        <div class="grid_1_of_3 images_1_of_3">
-        <a href="#">
-        <img src="views/app/images/productos/img3.jpg" title="Adamant an Industrial Category Flat Bootstrap Responsive Web Template" alt="Adamant an Industrial Category Flat Bootstrap Responsive Web Template Mobile website template Free">
-        <h2>Adamant</h2>
-        </a>
-        </div>
-      <div class="grid_1_of_3 images_1_of_3">
-      <a href="#">
-      <img src="views/app/images/productos/img1.jpg" title="Adamant an Industrial Category Flat Bootstrap Responsive Web Template" alt="Adamant an Industrial Category Flat Bootstrap Responsive Web Template Mobile website template Free">
-      <h2>Adamant</h2>
-      </a>
-      </div>
-      <div class="grid_1_of_3 images_1_of_3">
-      <a href="#">
-      <img src="views/app/images/productos/img2.jpg" title="Personal Login Form Responsive Widget Template" alt="Personal Login Form Responsive Widget Template Mobile website template Free">
-      <h2>Personal Login Form</h2>
-      </a>
-      </div>
-      <div class="grid_1_of_3 images_1_of_3">
-      <a href="#">
-      <img src="views/app/images/productos/img2.jpg" title="Personal Login Form Responsive Widget Template" alt="Personal Login Form Responsive Widget Template Mobile website template Free">
-      <h2>Personal Login Form</h2>
-      </a>
-      </div>
-      <div class="clear"></div>
+
+      <div class="features_items">
+          <h2 class="titleproducto text-center">Productos</h2>
+          <div class="col-sm-4">
+            <div class="product-image-wrapper">
+              <div class="single-products">
+                  <div class="productinfo text-center">
+                    <img src="views/app/images/productos/img3.jpg" alt="" />
+                    <h2>$56</h2>
+                    <p>Iphone 6s</p>
+                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                  </div>
+                  <div class="product-overlay">
+                    <div class="overlay-content">
+                      <h2>$56</h2>
+                      <p>Iphone 6s</p>
+                      <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                    </div>
+                  </div>
+              </div>
+              <div class="choose">
+                <ul class="nav nav-pills nav-justified">
+                  <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+                  <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
       </div>
 
 
-
-
-    </div>
   </div>
 </div>
 </section>
