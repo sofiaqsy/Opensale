@@ -1,18 +1,21 @@
 <?php
 
-if(isset($_SESSION['app_id']) and $_users[$_SESSION['app_id']]['permisos'] >= 2) {
+if(isset($_SESSION['app_id'])) {
 
   $isset_id = isset($_GET['id']) and is_numeric($_GET['id']) and $_GET['id'] >= 1;
 
-  require('core/models/class.Categorias.php');
-  $categorias = new Categorias();
+  require('core/models/class.productos.php');
+  $productos=new Productos();
 
   switch (isset($_GET['mode']) ? $_GET['mode'] : null) {
     case 'add':
+
       if($_POST) {
-        $categorias->Add();
+
+        $productos->Add();
+        
       } else {
-        include(HTML_DIR . 'categorias/add_categoria.php');
+        include(HTML_DIR . 'productos/add_producto.php');
       }
     break;
     case 'edit':
@@ -20,7 +23,7 @@ if(isset($_SESSION['app_id']) and $_users[$_SESSION['app_id']]['permisos'] >= 2)
         if($_POST) {
           $categorias->Edit();
         } else {
-          include(HTML_DIR . 'categorias/edit_categoria.php');
+          include(HTML_DIR . 'productos/edit_producto.php');
         }
       } else {
         header('location: ?view=categorias');
@@ -34,7 +37,7 @@ if(isset($_SESSION['app_id']) and $_users[$_SESSION['app_id']]['permisos'] >= 2)
       }
     break;
     default:
-      include(HTML_DIR . 'categorias/all_categoria.php');
+      include(HTML_DIR . 'productos/all_productos.php');
     break;
   }
 } else {

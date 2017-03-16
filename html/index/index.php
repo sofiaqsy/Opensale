@@ -8,6 +8,35 @@
 <section class="mbr-section mbr-after-navbar">
 <div class="mbr-section__container container mbr-section__container--isolated">
 
+  <div class="row container">
+
+    <?php
+        if(isset($_SESSION['app_id']) ) {
+          echo '
+          <div class="pull-right">
+            <div class="mbr-navbar__column"><ul class="mbr-navbar__items mbr-navbar__items--right mbr-buttons mbr-buttons--freeze mbr-buttons--right btn-inverse mbr-buttons--active"><li class="mbr-navbar__item">
+              <a class="mbr-buttons__btn btn btn-danger" href="?view=productos">GESTIONAR PRODUCTOS</a>
+            </li></ul></div>
+
+          </div>
+          ';
+        }else{
+          echo '
+          <div class="pull-right">
+            <div class="mbr-navbar__column"><ul class="mbr-navbar__items mbr-navbar__items--right mbr-buttons mbr-buttons--freeze mbr-buttons--right btn-inverse mbr-buttons--active"><li class="mbr-navbar__item">
+              <a class="mbr-buttons__btn btn btn-danger" href="?view=productos">Subir un producto</a>
+            </li></ul></div>
+
+          </div>
+          ';
+        }
+    ?>
+
+    <ol class="breadcrumb">
+      <li><a href="?view=index"><i class="fa fa-home"></i> Inicio</a></li>
+    </ol>
+</div>
+
   <div class="row">
     <!-- inicio de la  seccion cabeceza 1-->
     <div class="col-md-4">
@@ -51,10 +80,10 @@ Modelo
         <div class="grid_1_of_3 images_1_of_3">
         <a href="#">
         <img src="views/app/images/productos/img3.jpg" title="Adamant an Industrial Category Flat Bootstrap Responsive Web Template" alt="Adamant an Industrial Category Flat Bootstrap Responsive Web Template Mobile website template Free">
-        <h2>BLUE</h2>
-
+        <h2>BLUE - S/30.00 <br> usuario</h2>
         </a>
         </div>
+
       <div class="grid_1_of_3 images_1_of_3">
       <a href="#">
       <img src="views/app/images/productos/img1.jpg" title="Adamant an Industrial Category Flat Bootstrap Responsive Web Template" alt="Adamant an Industrial Category Flat Bootstrap Responsive Web Template Mobile website template Free">
@@ -76,107 +105,7 @@ Modelo
       <div class="clear"></div>
 
 
-      <div class="row categorias_con_foros categorias">
-        <div class="col-sm-12">
-            <div class="row titulo_categoria">Categorias </div>
 
-            <div class="row cajas">
-              <div class="col-md-2">
-                <center>
-
-
-
-              </center>
-
-
-
-
-              </div>
-              <div class="col-md-10">
-                <blockquote>
-
-                </blockquote>
-                <hr />
-
-              </div>
-            </div>
-        </div>
->>>>>>> 2deed161ea1b3a337041037043ef9a65f08e13f5
-      </div>
-
-    </div>
-    <div class="col-md-8">
-
-      <div class="features_items">
-          <h2 class="titleproducto text-center">Productos</h2>
-          <div class="col-sm-4">
-            <div class="product-image-wrapper">
-              <div class="single-products">
-                  <div class="productinfo text-center">
-                    <img src="views/app/images/productos/img3.jpg" alt="" />
-                    <h2>$99</h2>
-                    <p>Iphone 6s</p>
-                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                  </div>
-                  <div class="product-overlay">
-                    <div class="overlay-content">
-                      <h2>$56</h2>
-                      <p>Iphone 6s</p>
-                      <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                    </div>
-                  </div>
-              </div>
-              <div class="choose">
-                <ul class="nav nav-pills nav-justified">
-                  <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-                  <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-      </div>
-
-
-
-      <div class="grid_1_of_3 images_1_of_3">
-
-      </div>
-
-
-
-      <div class="features_items">
-          <h2 class="titleproducto text-center">Productos</h2>
-          <div class="col-sm-4">
-            <div class="product-image-wrapper">
-              <div class="single-products">
-                  <div class="productinfo text-center">
-                    <img src="views/app/images/productos/img3.jpg" alt="" />
-                    <h2>$99</h2>
-                    <p>Iphone 6s</p>
-                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                  </div>
-                  <div class="product-overlay">
-                    <div class="overlay-content">
-                      <h2>$56</h2>
-                      <p>Iphone 6s</p>
-                      <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                    </div>
-                  </div>
-              </div>
-              <div class="choose">
-                <ul class="nav nav-pills nav-justified">
-                  <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-                  <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-      </div>
-
-
-
-  </div>
-</div>
 </section>
 
 

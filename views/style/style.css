@@ -814,7 +814,7 @@ margin-top: 30px;
     font-weight: 700;
     padding: 10px;
     text-align: center;
-    text-transform: uppercase;
+  
 }
 .images_1_of_3 a:hover h2, .images_1_of_4 a:hover h2 {
     color: #396fa3 !important;
