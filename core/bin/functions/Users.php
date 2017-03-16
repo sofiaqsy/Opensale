@@ -1,12 +1,9 @@
 <?php
-
 function Users() {
-
   $db = new Conexion();
-
   $sql = $db->query("SELECT * FROM usuario;");
-  $usuarios_actuales = $db->rows($sql);
 
+  $usuarios_actuales = $db->rows($sql);
   if(!isset($_SESSION['cantidad_usuarios'])) {
     $_SESSION['cantidad_usuarios'] = $usuarios_actuales;
   }
@@ -24,13 +21,9 @@ function Users() {
       $users = $_SESSION['users'];
     }
   }
-
   $_SESSION['users'] = $users;
-
   $db->liberar($sql);
   $db->close();
-
   return $_SESSION['users'];
 }
-
 ?>

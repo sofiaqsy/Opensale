@@ -10,7 +10,7 @@ date_default_timezone_set('America/Caracas');
 define('DB_HOST','localhost');
 define('DB_USER','root');
 define('DB_PASS','');
-define('DB_NAME','opensale');
+define('DB_NAME','opensale1');
 
 
 #Constantes de la APP
@@ -34,7 +34,11 @@ require('core/bin/functions/Encrypt.php');
 require('core/bin/functions/EmailTemplate.php');
 require('core/bin/functions/Users.php');
 require('core/bin/functions/UrlAmigable.php');
+require('core/bin/functions/Modelos.php');
+require('core/bin/functions/Tipos.php');
+
 
 $_users = Users();
-
+$_modelos=Modelos();
+$_tipos=Tipos();
 ?>
