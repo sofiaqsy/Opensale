@@ -20,10 +20,8 @@
   <link rel="stylesheet" href="views/style/mainproducto.css" type="text/css">
   <link rel="stylesheet" href="views/style/alice.css" type="text/css">
 
-
-
-
   <script src="views/app/js/generales.js"></script>
 
   <title><?php echo APP_TITLE ?></title>
 </head>
+</html>

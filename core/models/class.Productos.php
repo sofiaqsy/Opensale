@@ -35,7 +35,7 @@ class Productos {
     $this->Errors('?view=productos&mode=add&error=');
     $cnt=0;
 
-    $fecha = date('d/m/Y h:i a', time());
+    $fecha = date(time(),'d/m/Y h:i a' );
     $this->db->query("INSERT INTO producto(COD_PROD,EST_PROD,IMA_PROD,PRE_PROD,SIT_PROD,FEC_PROD,COD_MOD) VALUES ('$cnt','$this->EST_PROD','$this->IMA_PROD','$this->PRE_PROD','$this->SIT_PROD','$fecha','$this->COD_MOD');");
     header('location: ?view=productos&mode=add&success=true');
     $cnt++;
