@@ -20,6 +20,8 @@
   <link rel="stylesheet" href="views/style/mainproducto.css" type="text/css">
   <link rel="stylesheet" href="views/style/alice.css" type="text/css">
 
+  <link rel="stylesheet" href="views/style/estilos.css" type="text/css" />
+  <script src="views/AjaxUpload/AjaxUpload.2.0.min.js"></script>
 
 
 

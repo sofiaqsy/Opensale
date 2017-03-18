@@ -111,6 +111,10 @@
                 </div>
               </div>
 
+
+
+
+
               <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-2">
                   <button type="reset" class="btn btn-default">Resetear</button>
@@ -119,6 +123,31 @@
               </div>
             </fieldset>
           </form>
+
+
+
+          <div id="wraper">
+    <header class="headerLayout">
+      <h2>upLoad de Archivos con Ajax</h2>
+    </header>
+
+    <section class="contentLayout" id="contentLayout">
+      <div id="contenedorImagen">
+        <img id="fotografia" class="fotografia" src="views/app/images/productos/default.jpg">
+      </div>
+
+      <button class="boton" id="addImage">Cambiar Imagen</button>
+
+      <div class="loaderAjax" id="loaderAjax">
+        <img src="views/app/images/productos/default.jpg">
+          <span>Publicando Fotografía...</span>
+      </div>
+
+    </section>
+
+</div>
+
+
         </div>
       </div>
   </div>
