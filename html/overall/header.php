@@ -20,14 +20,9 @@
   <link rel="stylesheet" href="views/style/mainproducto.css" type="text/css">
   <link rel="stylesheet" href="views/style/alice.css" type="text/css">
 
-<<<<<<< HEAD
   <link rel="stylesheet" href="views/style/estilos.css" type="text/css" />
-  <script src="views/AjaxUpload/AjaxUpload.2.0.min.js"></script>
 
 
-
-=======
->>>>>>> 94e9678cb4aa5d418ee3ba481bf4066e4ddd92ed
   <script src="views/app/js/generales.js"></script>
 
   <title><?php echo APP_TITLE ?></title>

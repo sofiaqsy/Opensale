@@ -36,6 +36,8 @@ require('core/bin/functions/Users.php');
 require('core/bin/functions/UrlAmigable.php');
 require('core/bin/functions/Modelos.php');
 require('core/bin/functions/Tipos.php');
+require('core/bin/functions/Subir_fichero.php');
+
 
 
 $_users = Users();

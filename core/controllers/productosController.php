@@ -11,9 +11,9 @@ if(isset($_SESSION['app_id'])) {
     case 'add':
 
       if($_POST) {
-
+    
         $productos->Add();
-        
+
       } else {
         include(HTML_DIR . 'productos/add_producto.php');
       }
