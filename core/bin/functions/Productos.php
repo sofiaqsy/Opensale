@@ -1,6 +1,6 @@
 <?php
 
-function Tipos() {
+function Productos() {
   $db = new Conexion();
   $sql = $db->query("SELECT * FROM tabla_tipo;");
   if($db->rows($sql) > 0) {

@@ -35,6 +35,8 @@ require('core/bin/functions/EmailTemplate.php');
 require('core/bin/functions/Users.php');
 require('core/bin/functions/UrlAmigable.php');
 require('core/bin/functions/Modelos.php');
+require('core/bin/functions/Productos.php');
+
 require('core/bin/functions/Tipos.php');
 require('core/bin/functions/Subir_fichero.php');
 
@@ -43,4 +45,5 @@ require('core/bin/functions/Subir_fichero.php');
 $_users = Users();
 $_modelos=Modelos();
 $_tipos=Tipos();
+$_productos=Productos();
 ?>

@@ -1,4 +1,4 @@
-<?php include(HTML_DIR . 'overall/header.php'); ?>
+  <?php include(HTML_DIR . 'overall/header.php'); ?>
 
 <body>
 <section class="engine"><a rel="nofollow" href="#"><?php echo APP_TITLE ?></a></section>
@@ -41,30 +41,31 @@
         <div class="col-md-12">
           <?php
 
-          if(false != $_foros) {
+          if(false != $_productos) {
            $HTML = '<table class="table"><thead><tr>
-           <th style="width: 10%">Id</th>
-           <th>Foro</th>
-           <th>Mensajes</th>
-           <th>Temas</th>
-           <th>Categoría</th>
+           <th style="width: 10%">Codigo</th>
+           <th>Modelo</th>
            <th>Estado</th>
+           <th>Precio</th>
+           <th>Situacion</th>
+           <th>Publicado</th>
            <th style="width: 20%">Acciones</th>
            </tr></thead>
            <tbody>';
 
-            foreach($_foros as $id_foro => $content_array) {
+            foreach($_productos as $id_producto => $content_array) {
 
-                $estado = $_foros[$id_foro]['estado'] == 1 ? 'Abierto' : 'Cerrado';
 
                 $HTML .= '<tr>
-                  <td>'.$_foros[$id_foro]['id'].'</td>
-                  <td>'.$_foros[$id_foro]['nombre'].'</td>
-                  <td>'.$_foros[$id_foro]['cantidad_mensajes'].'</td>
-                  <td>'.$_foros[$id_foro]['cantidad_temas'].'</td>
-                  <td>'.$_categorias[$_foros[$id_foro]['id_categoria']]['nombre'].'</td>
-                  <td>'. $estado .'</td>
-                  <td>
+                  <td>'.$_productos[$id_producto]['COD_PROD'].'</td>
+                  <td>'.$_productos[$id_producto]['COD_MOD'].'</td>
+                  <td>'.$_productos[$id_producto]['EST_PROD'].'</td>
+                  <td>'.$_productos[$id_producto]['IMA_PROD'].'</td>
+                  <td>'.$_productos[$id_producto]['PRE_PROD'].'</td>
+                  <td>'.$_productos[$id_producto]['SIT_PROD'].'</td>
+                  <td>'.$_productos[$id_producto]['FEC_PROD'].'</td>
+
+
                     <div class="btn-group">
                      <a href="#" class="btn btn-primary">Acciones</a>
                      <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
