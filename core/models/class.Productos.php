@@ -44,9 +44,8 @@ class Productos {
   public function Add() {
 
     $this->Errors('?view=productos&mode=add&error=');
-    $this->db->query("INSERT INTO producto(EST_PROD,IMA_PROD,PRE_PROD,SIT_PROD,COD_MOD) VALUES ('$this->EST_PROD','$this->IMA_PROD','$this->PRE_PROD','$this->SIT_PROD','$this->COD_MOD');");
-    
-    header('location: ?view=productos&mode=add&success=true');
+    subir_fichero(CARP_IMG,$this->IMA_PROD);
+    echo CARP_IMG;
 
   }
 

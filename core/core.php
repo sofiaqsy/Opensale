@@ -18,6 +18,7 @@ define('HTML_DIR','html/');
 define('APP_TITLE','Opensale');
 define('APP_COPY','Copyright &copy; ' . date('Y',time()) . ' Ocrend Software.');
 define('APP_URL','http://opensale.com/'); //Adaptado a mi nuevo entorno con Ubuntu
+define('CARP_IMG','views/app/images/productos');
 
 #Constantes de PHPMailer
 define('PHPMAILER_HOST','p3plcpnl0173.prod.phx3.secureserver.net');

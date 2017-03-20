@@ -44,6 +44,7 @@
           if(false != $_productos) {
            $HTML = '<table class="table"><thead><tr>
            <th style="width: 10%">Codigo</th>
+           <th>Marca</th>
            <th>Modelo</th>
            <th>Estado</th>
            <th>Precio</th>
@@ -58,20 +59,21 @@
 
                 $HTML .= '<tr>
                   <td>'.$_productos[$id_producto]['COD_PROD'].'</td>
-                  <td>'.$_productos[$id_producto]['COD_MOD'].'</td>
+                  <td>'.$_tipos[$_modelos[$_productos[$id_producto]['COD_MOD']]['COD_MOD']]['DES_TIPO'].'</td>
+                  <td>'.$_modelos[$_productos[$id_producto]['COD_MOD']]['COD_MAR'].'</td>
                   <td>'.$_productos[$id_producto]['EST_PROD'].'</td>
-                  <td>'.$_productos[$id_producto]['IMA_PROD'].'</td>
                   <td>'.$_productos[$id_producto]['PRE_PROD'].'</td>
                   <td>'.$_productos[$id_producto]['SIT_PROD'].'</td>
                   <td>'.$_productos[$id_producto]['FEC_PROD'].'</td>
 
-
+                  <td>
                     <div class="btn-group">
-                     <a href="#" class="btn btn-primary">Acciones</a>
-                     <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+                     <a  class="btn btn-primary">Acciones</a>
+                     <a  class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
                      <ul class="dropdown-menu">
-                       <li><a href="?view=configforos&mode=edit&id='.$_foros[$id_foro]['id'].'">Editar</a></li>
-                       <li><a onclick="DeleteItem(\'¿Está seguro de eliminar esta categoría?\',\'?view=configforos&mode=delete&id='.$_foros[$id_foro]['id'].'\')">Eliminar</a></li>
+
+                       <li><a href="?view=productos&mode=edit&id='.$_productos[$id_producto]['COD_PROD'].'">Editar</a></li>
+                       <li><a onclick="DeleteItem(\'¿Está seguro de eliminar esta categoría?\',\'?view=productos&mode=delete&id='.$_productos[$id_producto]['COD_PROD'].'\')">Eliminar</a></li>
                      </ul>
                    </div>
                   </td>
