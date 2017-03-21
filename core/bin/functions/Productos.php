@@ -1,11 +1,11 @@
 <?php
 
-function Tipos() {
+function Productos() {
   $db = new Conexion();
-  $sql = $db->query("SELECT * FROM tabla_tipo;");
+  $sql = $db->query("SELECT * FROM producto;");
   if($db->rows($sql) > 0) {
     while($data = $db->recorrer($sql)) {
-      $tipos[$data['COD_TAB_TIPO']] = $data;
+      $tipos[$data['COD_PROD']] = $data;
     }
   } else {
     $tipos = false;

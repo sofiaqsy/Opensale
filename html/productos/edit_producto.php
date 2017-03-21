@@ -29,85 +29,112 @@
 
   ?>
 
+
+
 <div class="row container">
   <div class="pull-right">
     <div class="mbr-navbar__column"><ul class="mbr-navbar__items mbr-navbar__items--right mbr-buttons mbr-buttons--freeze mbr-buttons--right btn-inverse mbr-buttons--active"><li class="mbr-navbar__item">
-         <a class="mbr-buttons__btn btn btn-danger" href="?view=configforos">GESTIONAR FOROS</a>
+         <a class="mbr-buttons__btn btn btn-danger " href="?view=productos">Gestionar Productos</a>
      </li></ul></div>
      <div class="mbr-navbar__column"><ul class="mbr-navbar__items mbr-navbar__items--right mbr-buttons mbr-buttons--freeze mbr-buttons--right btn-inverse mbr-buttons--active"><li class="mbr-navbar__item">
-         <a class="mbr-buttons__btn btn btn-danger" href="?view=configforos&mode=add">CREAR FORO</a>
+         <a class="mbr-buttons__btn btn btn-danger " href="?view=productos&mode=add">Subir Producto</a>
      </li></ul></div>
-      <div class="mbr-navbar__column"><ul class="mbr-navbar__items mbr-navbar__items--right mbr-buttons mbr-buttons--freeze mbr-buttons--right btn-inverse mbr-buttons--active"><li class="mbr-navbar__item">
-          <a class="mbr-buttons__btn btn btn-danger" href="?view=categorias">GESTIONAR CATEGORÍAS</a>
-      </li></ul></div>
+
     </div>
 
     <ol class="breadcrumb">
-      <li><a href="?view=index"><i class="fa fa-comments"></i> Foros</a></li>
+      <li><a href="?view=index"><i class="fa fa-comments"></i> Productos</a></li>
     </ol>
 </div>
 
 <div class="row categorias_con_foros">
   <div class="col-sm-12">
-      <div class="row titulo_categoria">Gestión de Foros</div>
+      <div class="row titulo_categoria">Subir un producto</div>
 
       <div class="row cajas">
         <div class="col-md-12">
-          <form class="form-horizontal" action="?view=configforos&mode=edit&id=<?php echo $_GET['id'] ?>" method="POST" enctype="application/x-www-form-urlencoded">
+          <form class="form-horizontal" action="?view=productos&mode=add" method="POST" enctype="application/x-www-form-urlencoded">
             <fieldset>
               <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">Nombre</label>
+                <label for="inputEmail" class="col-lg-2 control-label">Tipo de celular</label>
                 <div class="col-lg-10">
-                  <input type="text" class="form-control" maxlength="250" name="nombre" placeholder="Nombre para el foro" value="<?php echo $_foros[$_GET['id']]['nombre'] ?>">
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">Descripción</label>
-                <div class="col-lg-10">
-                  <input type="text" class="form-control" maxlength="250" name="descrip" placeholder="Descripción corta (acepta HTML)" value="<?php echo $_foros[$_GET['id']]['descrip'] ?>">
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">Categoría</label>
-                <div class="col-lg-10">
-                  <select name="categoria" class="form-control">
+                  <select name="tipo_celular" class="form-control">
                     <?php
-                      foreach($_categorias as $id_categoria => $array_categoria) {
-                        if($id_categoria == $_foros[$_GET['id']]['id_categoria']) {
-                          echo '<option value="'.$id_categoria.'" selected>'.$_categorias[$id_categoria]['nombre'].'</option>';
-                        } else {
+                    if(false != $_tipos) {
+                      foreach($_tipos as $id_tipo => $array_tipo) {
+                        echo '<option value="'.$id_tipo.'">'.$_tipos[$id_tipo]['DES_TIPO'].'</option>';
+                      }
+                    } else {
+                      echo '<option value="0">No existe categoría</option>';
+                    }
+                  ?>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="inputEmail" class="col-lg-2 control-label">Modelo</label>
+                <div class="col-lg-10">
+                  <select name="modelo" class="form-control">
+                    <?php
+                      if(false != $_categorias) {
+                        foreach($_categorias as $id_categoria => $array_categoria) {
                           echo '<option value="'.$id_categoria.'">'.$_categorias[$id_categoria]['nombre'].'</option>';
                         }
+                      } else {
+                        echo '<option value="0">No existe categoría</option>';
                       }
                     ?>
                   </select>
                 </div>
               </div>
+
               <div class="form-group">
-                <label class="col-lg-2 control-label">Estado del foro</label>
+                <label for="inputEmail" class="col-lg-2 control-label">Precio</label>
                 <div class="col-lg-10">
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="estado" value="1" <?php if($_foros[$_GET['id']]['estado'] == 1) { echo 'checked=""'; } ?>>
-                      Abierto
-                    </label>
-                  </div>
-                  <div class="radio">
-                    <label>
-                      <input type="radio" name="estado" value="0" <?php if($_foros[$_GET['id']]['estado'] == 0) { echo 'checked=""'; } ?>>
-                      Cerrado
-                    </label>
-                  </div>
+                  <input type="text" class="form-control" maxlength="250" name="precio" placeholder="Precio del celular">
                 </div>
               </div>
               <div class="form-group">
+                <label for="inputEmail" class="col-lg-2 control-label">Condicion</label>
+                <div class="col-lg-10">
+                  <select name="estado" class="form-control">
+                    <option value="N">nuevo</option>';
+                    <option value="U">usado</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputEmail" class="col-lg-2 control-label">Situacion</label>
+                <div class="col-lg-10">
+                  <select name="lugar" class="form-control">
+                    <option value="1">lima</option>';
+                    <option value="0">ucayalo</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputEmail" class="col-lg-2 control-label"> Imagen</label>
+                <div class="col-lg-10">
+                  <input id="campofotografia" name="campofotografia" type="file" />
+
+                </div>
+              </div>
+
+
+
+
+
+
+              <div class="form-group">
                 <div class="col-lg-10 col-lg-offset-2">
                   <button type="reset" class="btn btn-default">Resetear</button>
-                  <button type="submit" class="btn btn-primary">Editar</button>
+                  <button type="submit" class="btn btn-primary">Crear</button>
                 </div>
               </div>
             </fieldset>
           </form>
+
         </div>
       </div>
   </div>

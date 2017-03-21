@@ -3,14 +3,12 @@
 class Productos {
 
   private $db;
-
-
   private $EST_PROD;
   private $IMA_PROD;
   private $PRE_PROD;
   private $SIT_PROD;
-
   private $COD_MOD;
+
 
 
   public function __construct() {
@@ -18,12 +16,24 @@ class Productos {
   }
 
   private function Errors($url) {
+    try {
+          if(empty($_POST['estado'] || empty($_POST['precio']))) {
+            throw new Exception(1);
+          } else {
+            $this->COD_MOD=$this->db->real_escape_string('MA59');
+            $this->EST_PROD=$this->db->real_escape_string($_POST['estado']);
+            $this->IMA_PROD=$this->db->real_escape_string($_POST['campofotografia']);
+            $this->PRE_PROD=$this->db->real_escape_string($_POST['precio']);
+            $this->SIT_PROD=$this->db->real_escape_string('A');
 
-        $this->COD_MOD=$this->db->real_escape_string('MA59');
-        $this->EST_PROD=$this->db->real_escape_string($_POST['estado']);
-        $this->IMA_PROD=$this->db->real_escape_string('imagen1.jpg');
-        $this->PRE_PROD=$this->db->real_escape_string($_POST['precio']);
-        $this->SIT_PROD=$this->db->real_escape_string('A');
+
+
+          }
+        } catch(Exception $error) {
+          header('location: '.$url .$error->getMessage());
+          exit;
+        }
+
 
 
 
@@ -32,13 +42,11 @@ class Productos {
 
 
   public function Add() {
-    $this->Errors('?view=productos&mode=add&error=');
-    $cnt=0;
 
-    $fecha = date(time(),'d/m/Y h:i a' );
-    $this->db->query("INSERT INTO producto(COD_PROD,EST_PROD,IMA_PROD,PRE_PROD,SIT_PROD,FEC_PROD,COD_MOD) VALUES ('$cnt','$this->EST_PROD','$this->IMA_PROD','$this->PRE_PROD','$this->SIT_PROD','$fecha','$this->COD_MOD');");
-    header('location: ?view=productos&mode=add&success=true');
-    $cnt++;
+    $this->Errors('?view=productos&mode=add&error=');
+    subir_fichero(CARP_IMG,$this->IMA_PROD);
+    echo CARP_IMG;
+
   }
 
   public function Edit() {

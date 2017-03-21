@@ -13,27 +13,27 @@ if(isset($_SESSION['app_id'])) {
       if($_POST) {
 
         $productos->Add();
-        
+
       } else {
         include(HTML_DIR . 'productos/add_producto.php');
       }
     break;
     case 'edit':
-      if($isset_id and array_key_exists($_GET['id'],$_categorias)) {
+      if($isset_id and array_key_exists($_GET['id'],$_productos)) {
         if($_POST) {
-          $categorias->Edit();
+          $productos->Edit();
         } else {
           include(HTML_DIR . 'productos/edit_producto.php');
         }
       } else {
-        header('location: ?view=categorias');
+        header('location: ?view=productos');
       }
     break;
     case 'delete':
       if($isset_id) {
-        $categorias->Delete();
+        $productos->Delete();
       } else {
-        header('location: ?view=categorias');
+        header('location: ?view=productos');
       }
     break;
     default:

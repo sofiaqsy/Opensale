@@ -110,6 +110,14 @@
                   </select>
                 </div>
               </div>
+              <div class="form-group">
+                <label for="inputEmail" class="col-lg-2 control-label"> Imagen</label>
+                <div class="col-lg-10">
+                  <input id="campofotografia" name="campofotografia" type="file" />
+
+                </div>
+              </div>
+                  
 
 
 
@@ -126,26 +134,7 @@
 
 
 
-          <div id="wraper">
-    <header class="headerLayout">
-      <h2>upLoad de Archivos con Ajax</h2>
-    </header>
 
-    <section class="contentLayout" id="contentLayout">
-      <div id="contenedorImagen">
-        <img id="fotografia" class="fotografia" src="views/app/images/productos/default.jpg">
-      </div>
-
-      <button class="boton" id="addImage">Cambiar Imagen</button>
-
-      <div class="loaderAjax" id="loaderAjax">
-        <img src="views/app/images/productos/default.jpg">
-          <span>Publicando Fotografía...</span>
-      </div>
-
-    </section>
-
-</div>
 
 
         </div>
