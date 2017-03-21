@@ -46,18 +46,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
   <div class="row">
     <!-- inicio de la  seccion cabeceza 1-->
     <div class="col-md-4">
@@ -128,8 +116,6 @@
         </div>
 
       <div class="clear"></div>
-
-
 
 
 </section>
