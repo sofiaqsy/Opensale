@@ -46,18 +46,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
   <div class="row">
     <!-- inicio de la  seccion cabeceza 1-->
     <div class="col-md-4">
@@ -97,35 +85,24 @@
 <!-- inicio de la  seccion cabeceza 2-->
     <div class="col-md-8">
       Productos
-        <div class="">
+
           <div class="section group">
+<?php foreach($_productos as $id_producto => $content_array) :?>
+
             <div class="grid_1_of_3 images_1_of_3">
-              <a href="#">
-                <img src="views/app/images/productos/img3.jpg" title="Adamant an Industrial Category Flat Bootstrap Responsive Web Template" alt="Adamant an Industrial Category Flat Bootstrap Responsive Web Template Mobile website template Free">
-                <h2>BLUE</h2>
+              <a href="?view=detalles&id=<?php echo $id_producto?>">
+                <img src="<?php echo CARP_IMG ?>img3.jpg" title="Adamant an Industrial Category Flat Bootstrap Responsive Web Template" alt="Adamant an Industrial Category Flat Bootstrap Responsive Web Template Mobile website template Free">
+                <h2><?php echo $_tipos[$_modelos[$_productos[$id_producto]['COD_MOD']]['COD_MOD']]['DES_TIPO'] ?>- <?php echo $_modelos[$_productos[$id_producto]['COD_MOD']]['COD_MAR'] ?><br>S/<?php echo $_productos[$id_producto]['PRE_PROD'] ?>.00</h2>
+
+
               </a>
         </div>
+<?php endforeach; ?>
+      </div>
 
-        <div class="grid_1_of_3 images_1_of_3">
-          <a href="#">
-            <img src="views/app/images/productos/img1.jpg" title="Adamant an Industrial Category Flat Bootstrap Responsive Web Template" alt="Adamant an Industrial Category Flat Bootstrap Responsive Web Template Mobile website template Free">
-            <h2>BLUE S2</h2>
-          </a>
-        </div>
 
-        <div class="grid_1_of_3 images_1_of_3">
-          <a href="#">
-            <img src="views/app/images/productos/img2.jpg" title="Personal Login Form Responsive Widget Template" alt="Personal Login Form Responsive Widget Template Mobile website template Free">
-            <h2>SAMSUNG GALAXY S3</h2>
-          </a>
-        </div>
 
-        <div class="grid_1_of_3 images_1_of_3">
-          <a href="#">
-            <img src="views/app/images/productos/img2.jpg" title="Personal Login Form Responsive Widget Template" alt="Personal Login Form Responsive Widget Template Mobile website template Free">
-            <h2>SAMSUNG GALAXY A1</h2>
-          </a>
-        </div>
+
 
       <div class="clear"></div>
 

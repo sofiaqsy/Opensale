@@ -4,7 +4,6 @@
 <section class="engine"><a rel="nofollow" href="#"><?php echo APP_TITLE ?></a></section>
 
 <?php include(HTML_DIR . '/overall/topnav.php'); ?>
-
 <section class="mbr-section mbr-after-navbar">
 <div class="mbr-section__container container mbr-section__container--isolated">
 
@@ -54,7 +53,7 @@
            </tr></thead>
            <tbody>';
 
-            foreach($_productos as $id_producto => $content_array) {
+            foreach($_productos_usuarios as $id_producto => $content_array) {
 
 
                 $HTML .= '<tr>

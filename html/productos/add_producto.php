@@ -11,8 +11,7 @@
   <?php
   if(isset($_GET['success'])) {
     echo '<div class="alert alert-dismissible alert-success">
-      <strong>Completado!</strong> el foro ha sido creado.
-    </div>';
+      <strong>Completado!</strong> el producto ha sido subido</div>';
   }
 
   if(isset($_GET['error'])) {
@@ -102,14 +101,13 @@
                 </div>
               </div>
               <div class="form-group">
-                <label for="inputEmail" class="col-lg-2 control-label">Situacion</label>
+                <label for="inputEmail" class="col-lg-2 control-label">Descripcion</label>
                 <div class="col-lg-10">
-                  <select name="lugar" class="form-control">
-                    <option value="1">lima</option>';
-                    <option value="0">ucayalo</option>
-                  </select>
+                 <textarea class="form-control" name="descripcion"  maxlength="100"></textarea>
                 </div>
               </div>
+
+
               <div class="form-group">
                 <label for="inputEmail" class="col-lg-2 control-label"> Imagen</label>
                 <div class="col-lg-10">
@@ -117,9 +115,6 @@
 
                 </div>
               </div>
-                  
-
-
 
 
 

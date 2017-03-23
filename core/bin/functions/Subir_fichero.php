@@ -1,4 +1,4 @@
-<?php
+nto <?php
 function Subir_fichero($directorio_destino, $nombre_fichero)
 {
     $tmp_name = $_FILES[$nombre_fichero]['tmp_name'];
