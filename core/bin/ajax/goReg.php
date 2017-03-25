@@ -7,7 +7,7 @@ $user_nom = $db->real_escape_string($_POST['user_nom']);
 $user_ape = $db->real_escape_string($_POST['user_ape']);
 $user_DNI = $db->real_escape_string($_POST['user_DNI']);
 $user_celular = $db->real_escape_string($_POST['user_celular']);
-
+echo'des';
 $email = $db->real_escape_string($_POST['email']);
 
 $sql = $db->query("SELECT COR_USU FROM usuario WHERE  COR_USU='$email' LIMIT 1;");
