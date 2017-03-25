@@ -2,7 +2,7 @@
 
 function Tipos() {
       $db = new Conexion();
-      $sql = $db->query("SELECT * FROM tabla_tipo order by des_tipo asc;");
+      $sql = $db->query("SELECT * FROM TABLA_TIPO WHERE COD_TAB_TIPO='MARCA'");
     if($db->rows($sql) > 0){
     while($data = $db->recorrer($sql)){
       $tipos[$data['COD_TIPO']] = $data;

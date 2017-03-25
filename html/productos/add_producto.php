@@ -27,6 +27,7 @@
   }
   ?>
 
+
 <div class="row container">
   <div class="pull-right">
     <div class="mbr-navbar__column"><ul class="mbr-navbar__items mbr-navbar__items--right mbr-buttons mbr-buttons--freeze mbr-buttons--right btn-inverse mbr-buttons--active"><li class="mbr-navbar__item">
@@ -54,34 +55,42 @@
               <div class="form-group">
                 <label for="inputEmail" class="col-lg-2 control-label">Tipo de celular</label>
                 <div class="col-lg-10">
-                  <select name="tipo_celular" class="form-control">
-                    <?php
-                    if(false != $_tipos) {
-                      foreach($_tipos as $id_tipo => $array_tipo) {
-                        echo '<option value="'.$id_tipo.'">'.$_tipos[$id_tipo]['DES_TIPO'].'</option>';
+
+                  <script>
+                  $(document).ready(function(){
+
+                    $('#marca').change(function() {
+                      var id=$('#marca').val();
+                      $('#modelo').load('?view=datos&id='+id);
+
+                  });
+                        });
+                  </script>
+
+                  <select class="form-control" name='marca' id='marca'>
+                      <?php
+                      if(false != $_tipos) {
+                        foreach($_tipos as $id_tipo => $array_tipo) {
+                          echo '<option value="'.$id_tipo.'">'.$_tipos[$id_tipo]['DES_TIPO'].'</option>';
+                        }
+                      }else{
+                          echo '<option value="0">No existen marcas</option>';
                       }
-                    } else {
-                      echo '<option value="0">No existe categoría</option>';
-                    }
-                  ?>
+                      ?>
                   </select>
+
                 </div>
               </div>
 
               <div class="form-group">
                 <label for="inputEmail" class="col-lg-2 control-label">Modelo</label>
                 <div class="col-lg-10">
-                  <select name="modelo" class="form-control">
-                    <?php
-                      if(false != $_categorias) {
-                        foreach($_categorias as $id_categoria => $array_categoria) {
-                          echo '<option value="'.$id_categoria.'">'.$_categorias[$id_categoria]['nombre'].'</option>';
-                        }
-                      } else {
-                        echo '<option value="0">No existe categoría</option>';
-                      }
-                    ?>
-                  </select>
+
+                  <div >
+                    <select class='form-control' name='marca' id='modelo'>
+                    </select>
+                  </div>
+
                 </div>
               </div>
 

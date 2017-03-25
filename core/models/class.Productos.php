@@ -23,7 +23,7 @@ class Productos {
           } else {
 
             $this->COD_USU=$this->db->real_escape_string($_SESSION['app_id']);
-            $this->COD_MOD=$this->db->real_escape_string('MA59');
+            $this->COD_MOD=$this->db->real_escape_string($_POST['marca']);
             $this->EST_PROD=$this->db->real_escape_string($_POST['estado']);
             $this->IMA_PROD=$this->db->real_escape_string($_POST['campofotografia']);
             $this->PRE_PROD=$this->db->real_escape_string($_POST['precio']);

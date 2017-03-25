@@ -40,7 +40,7 @@
         <div class="col-md-12">
           <?php
 
-          if(false != $_productos) {
+          if(false != $_productos_usuarios) {
            $HTML = '<table class="table"><thead><tr>
            <th style="width: 10%">Codigo</th>
            <th>Marca</th>
@@ -57,9 +57,9 @@
 
 
                 $HTML .= '<tr>
-                  <td>'.$_productos[$id_producto]['COD_PROD'].'</td>
-                  <td>'.$_tipos[$_modelos[$_productos[$id_producto]['COD_MOD']]['COD_MOD']]['DES_TIPO'].'</td>
-                  <td>'.$_modelos[$_productos[$id_producto]['COD_MOD']]['COD_MAR'].'</td>
+                  <td>'.$_productos_usuarios[$id_producto]['COD_PROD'].'</td>
+                  <td>'.$_tipos[$_modelos[$_productos_usuarios[$id_producto]['COD_MOD']]['COD_MAR']]['DES_TIPO'].'</td>
+                  <td>'.$_modelos[$_productos[$id_producto]['COD_MOD']]['DES_MOD'].'</td>
                   <td>'.$_productos[$id_producto]['EST_PROD'].'</td>
                   <td>'.$_productos[$id_producto]['PRE_PROD'].'</td>
                   <td>'.$_productos[$id_producto]['SIT_PROD'].'</td>

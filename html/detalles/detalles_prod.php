@@ -20,7 +20,7 @@
 
     <div class="row categorias_con_foros">
       <div class="col-sm-12">
-        <div class="row titulo_categoria">Mas detalles<?php echo $_tipos[$_modelos[$_productos[$_POST['id']]['COD_MOD']]['COD_MOD']]['DES_TIPO'] ?> </div>
+        <div class="row titulo_categoria">Mas detalles<?php echo $_tipos[$_modelos[$_productos[$id_producto]['COD_MOD']]['COD_MAR']]['DES_TIPO'] ?> </div>
           <div class="row cajas">
             <div class="col-md-4">
               <center>
@@ -39,8 +39,8 @@
             <blockquote>
 
             <ul class="list-group">
-  <li class="list-group-item">Tipo de celular       :  <?php echo $_tipos[$_modelos[$_productos[$_GET['id']]['COD_MOD']]['COD_MOD']]['DES_TIPO']?>      </li>
-  <li class="list-group-item">Modelo                :  <?php echo $_modelos[$_productos[$_GET['id']]['COD_MOD']]['COD_MAR']?>     </li>
+  <li class="list-group-item">Tipo de celular       :  <?php echo $_tipos[$_modelos[$_productos[$_GET['id']]['COD_MOD']]['COD_MAR']]['DES_TIPO']?>      </li>
+  <li class="list-group-item">Modelo                :  <?php echo $_modelos[$_productos[$_GET['id']]['COD_MOD']]['DES_MOD']?>     </li>
   <li class="list-group-item">Estado                :   <?php if( $_productos[$_GET['id']]['EST_PROD']=='U'){echo 'Usado';}else{echo 'Nuevo';}?>     </li>
   <li class="list-group-item">Precio                :    <span>S/</span><?php echo $_productos[$_GET['id']]['PRE_PROD']?><span>.00 </span>    </li>
   <li class="list-group-item">Situacion             :   <?php if( $_productos[$_GET['id']]['SIT_PROD']=='A'){echo 'Activo';}else if($_productos[$_GET['id']]['SIT_PROD']=='R'){echo 'Reservado';}else{echo 'Vendido';}?>     </li>
@@ -60,7 +60,7 @@
 
 
             <br>
-          <a href="?view=">  <button type="submit" class="btn btn-primary">Notificar interes</button></a>
+          <a href="?view=notificaciones">  <button type="submit" class="btn btn-primary">Notificar interes</button></a>
 
           </div>
         </div>
