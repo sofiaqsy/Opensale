@@ -22,6 +22,7 @@
 
   <link rel="stylesheet" href="views/style/estilos.css" type="text/css" />
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
 
   <script src="views/app/js/generales.js"></script>
 

@@ -6,7 +6,7 @@ if(isset($_SESSION['app_id'])) {
 
   require('core/models/class.productos.php');
   $productos=new Productos();
-
+  $_productos_usuarios=Productos_usuarios($_SESSION['app_id']);
   switch (isset($_GET['mode']) ? $_GET['mode'] : null) {
     case 'add':
 

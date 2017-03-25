@@ -10,6 +10,21 @@
 <div class="mbr-section__container container mbr-section__container--isolated">
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <?php
     if(isset($_GET['success'])) {
       echo '<div class="alert alert-dismissible alert-success">
@@ -23,6 +38,7 @@
       </div>';
     }
     ?>
+
 
   <div class="row container">
 
@@ -55,67 +71,84 @@
           Tipos de Celulares
         </div>
             <br><!--salto de linea -->
+<<<<<<< HEAD
         <select class="form-control">
+=======
+
+
+        <script>
+        $(document).ready(function(){
+
+          $('#marca').change(function() {
+
+
+            var id=$('#marca').val();
+            $('#modelo').load('?view=datos&mode=combo&id='+id);
+            $('#poreleccion').load('?view=datos&mode=mostrar&id='+id);
+
+
+
+        });
+              });
+
+        </script>
+
+        <select class="form-control" name='marca' id='marca'>
+>>>>>>> dcd74da53c2e768d87e44e6041c38caf74d5c9cc
             <?php
             if(false != $_tipos) {
-                echo '<option>TODOS</option>';
+                echo '<option value="OpMarcaTodos">TODOS</option>';
               foreach($_tipos as $id_tipo => $array_tipo) {
                 echo '<option value="'.$id_tipo.'">'.$_tipos[$id_tipo]['DES_TIPO'].'</option>';
               }
             }else{
-                echo '<option value="0">No existe categoría</option>';
+                echo '<option value="0">No existen marcas</option>';
             }
             ?>
         </select>
+
+
+
+
+
             <br> <!--salto de linea -->
     <div class="grid_1_of_2 images_1_of_2">
       Modelo
     </div>
             <br> <!--salto de linea -->
-        <select class="form-control">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
+
+      <div >
+        <select class='form-control' name='marca' id='modelo'>
+          <option value="OpModeloTodos">TODOS</option>
         </select>
+      </div>
+
+
     </div>
   </div>
   <!-- fin de la  seccion cabeceza 1-->
 <!-- inicio de la  seccion cabeceza 2-->
     <div class="col-md-8">
       Productos
-        <div class="">
-          <div class="section group">
-            <div class="grid_1_of_3 images_1_of_3">
-              <a href="#">
-                <img src="views/app/images/productos/img3.jpg" title="Adamant an Industrial Category Flat Bootstrap Responsive Web Template" alt="Adamant an Industrial Category Flat Bootstrap Responsive Web Template Mobile website template Free">
-                <h2>BLUE</h2>
-              </a>
-        </div>
 
-        <div class="grid_1_of_3 images_1_of_3">
-          <a href="#">
-            <img src="views/app/images/productos/img1.jpg" title="Adamant an Industrial Category Flat Bootstrap Responsive Web Template" alt="Adamant an Industrial Category Flat Bootstrap Responsive Web Template Mobile website template Free">
-            <h2>BLUE S2</h2>
-          </a>
-        </div>
 
-        <div class="grid_1_of_3 images_1_of_3">
-          <a href="#">
-            <img src="views/app/images/productos/img2.jpg" title="Personal Login Form Responsive Widget Template" alt="Personal Login Form Responsive Widget Template Mobile website template Free">
-            <h2>SAMSUNG GALAXY S3</h2>
-          </a>
-        </div>
 
-        <div class="grid_1_of_3 images_1_of_3">
-          <a href="#">
-            <img src="views/app/images/productos/img2.jpg" title="Personal Login Form Responsive Widget Template" alt="Personal Login Form Responsive Widget Template Mobile website template Free">
-            <h2>SAMSUNG GALAXY A1</h2>
-          </a>
-        </div>
 
-      <div class="clear"></div>
+      <div class="section group" id="poreleccion" name="poreleccion">
+        <?php foreach($_productos as $id_producto => $content_array) :?>
+
+              <div class="grid_1_of_3 images_1_of_3">
+                <a href="?view=detalles&id=<?php echo $id_producto?>">
+                  <img src="<?php echo CARP_IMG ?>img3.jpg" title="Adamant an Industrial Category Flat Bootstrap Responsive Web Template" alt="Adamant an Industrial Category Flat Bootstrap Responsive Web Template Mobile website template Free">
+                  <h2><?php echo $_tipos[$_modelos[$_productos[$id_producto]['COD_MOD']]['COD_MAR']]['DES_TIPO'] ?>- <?php echo $_modelos[$_productos[$id_producto]['COD_MOD']]['DES_MOD'] ?><br>S/<?php echo $_productos[$id_producto]['PRE_PROD'] ?>.00</h2>
+                </a>
+          </div>
+        <?php endforeach; ?>
+      </div>
+
+
+
+      </div>
 
 
 </section>
