@@ -61,6 +61,7 @@
                     $('#marca').change(function() {
                       var id=$('#marca').val();
                       $('#modelo').load('?view=datos&mode=combo&id='+id);
+
                     });
                         });
 
@@ -121,7 +122,7 @@
               <div class="form-group">
                 <label for="inputEmail" class="col-lg-2 control-label"> Imagen</label>
                 <div class="col-lg-10">
-                  <input id="campofotografia" name="campofotografia" type="file" />
+                  <input id="imagen" name="imagen" type="file" />
 
                 </div>
               </div>

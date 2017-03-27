@@ -19,18 +19,16 @@ class Productos {
   private function Errors($url) {
 
     try {
-          if(empty($_POST['estado'] ) || empty($_POST['precio']) || empty($_POST['descripcion']) || empty($_POST['marca']) || empty($_POST['campofotografia']) ) {
+          if(empty($_POST['estado'] ) || empty($_POST['precio']) || empty($_POST['descripcion']) || empty($_POST['marca']) || empty($_POST['imagen']) ) {
             throw new Exception(1);
           } else {
             $this->COD_USU=$this->db->real_escape_string($_SESSION['app_id']);
             $this->COD_MOD=$this->db->real_escape_string($_POST['modelo']);
             $this->EST_PROD=$this->db->real_escape_string($_POST['estado']);
-            $this->IMA_PROD=$this->db->real_escape_string($_POST['campofotografia']);
+            $this->IMA_PROD=$this->db->real_escape_string($_POST['imagen']);
             $this->PRE_PROD=$this->db->real_escape_string($_POST['precio']);
             $this->DES_PROD=$this->db->real_escape_string($_POST['descripcion']);
             $this->SIT_PROD=$this->db->real_escape_string('A');
-
-
 
           }
         } catch(Exception $error) {
@@ -39,10 +37,6 @@ class Productos {
           exit;
         }
 
-
-
-
-
   }
 
 
@@ -50,6 +44,7 @@ class Productos {
 
     $this->Errors('?view=productos&mode=add&error=');
     $this->db->query("INSERT INTO producto(COD_USU,EST_PROD,IMA_PROD,PRE_PROD,SIT_PROD,COD_MOD,DES_PROD) VALUES ('$this->COD_USU','$this->EST_PROD','$this->IMA_PROD','$this->PRE_PROD','$this->SIT_PROD','$this->COD_MOD','$this->DES_PROD');");
+    include('core/bin/functions/subir_img');
     header('location: ?view=productos&mode=add&success=true');
 
 

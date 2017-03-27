@@ -2,6 +2,8 @@
 
 if(isset($_SESSION['app_id'])) {
 
+
+
   $isset_id = isset($_GET['id']) and is_numeric($_GET['id']) and $_GET['id'] >= 1;
 
   require('core/models/class.productos.php');
