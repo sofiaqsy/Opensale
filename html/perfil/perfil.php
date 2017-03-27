@@ -11,7 +11,6 @@
     <div class="row container">
       <div class="pull-right">
         <div class="mbr-navbar__column"><ul class="mbr-navbar__items mbr-navbar__items--right mbr-buttons mbr-buttons--freeze mbr-buttons--right btn-inverse mbr-buttons--active"><li class="mbr-navbar__item">
-         <a class="mbr-buttons__btn btn btn-danger" href="?view=configforos">EDITAR PERFIL</a>
           </li></ul></div>
       </div>
       <ol class="breadcrumb">
@@ -21,32 +20,24 @@
 
     <div class="row categorias_con_foros">
       <div class="col-sm-12">
-        <div class="row titulo_categoria">Perfil de <?php echo $_users['user'][$id_usuario]; ?> </div>
+        <div class="row titulo_categoria">Perfil de <?php echo $_users[$id_usuario]['NOM_USU']; ?> </div>
           <div class="row cajas">
             <div class="col-md-2">
               <center>
-                <img src="views/app/images/users/<?php echo $_users[$id_usuario]['img']; ?>" class="thumbnail" height="120" />
-                  <strong><?php echo $_users[$id_usuario]['user']; ?></strong>
-                  <img src="views/app/images/<?php echo GetUserStatus($_users[$id_usuario]['ultima_conexion']); ?>" />
-                    <br/>
-                    <b style="color: green;">**<?php echo $_users[$id_usuario]['rango']; ?>**</b>
-                <br/><br/>
+                <img src="views/app/images/users/default.jpg" class="thumbnail" height="120" />
+
               </center>
                 <ul style="list-style:none; padding-left: 4px;">
-                  <li><b><?php echo $db->recorrer($sql)[0]; ?></b> temas </li>
-                  <li><b><?php echo $_users[$id_usuario]['mensajes']; ?></b> mensajes</li>
-                  <li><b><?php echo $_users[$id_usuario]['edad']; ?></b> años</li>
-                  <li>Registrado el <b><?php echo $_users[$id_usuario]['fecha_reg']; ?></b></li>
+                  <li><b>Nombre : <?php echo $_users[$id_usuario]['NOM_USU']; ?></b> </li>
+                  <li><b> Apellido : <?php echo $_users[$id_usuario]['APE_USU']; ?></b> </li>
+                  <li><b> Correo : <?php echo $_users[$id_usuario]['COR_USU']; ?></b> </li>
+                  <li><b> Numero de publicaciones : 5 </b> </li>
+                  <li><b> Numero de ventas : 5</b> </li>
+
               </ul>
           </div>
           <div class="col-md-10">
-            <blockquote>
-              <?php echo $_users[$id_usuario]['biografia']; ?>
-            </blockquote>
-            <hr/>
-            <p>
-              <?php echo BBcode($_users[$id_usuario]['firma']); ?>
-            </p>
+
           </div>
         </div>
       </div>

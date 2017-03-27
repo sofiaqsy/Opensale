@@ -20,53 +20,46 @@
 
     <div class="row categorias_con_foros">
       <div class="col-sm-12">
-        <div class="row titulo_categoria">Mas detalles<?php echo $_tipos[$_modelos[$_productos[$id_producto]['COD_MOD']]['COD_MAR']]['DES_TIPO'] ?> </div>
+        <div class="row titulo_categoria">Mas detalles </div>
           <div class="row cajas">
             <div class="col-md-4">
               <center>
 
-
                     <img src="<?php echo CARP_IMG ?>img3.jpg" title="Adamant an Industrial Category Flat Bootstrap Responsive Web Template" alt="Adamant an Industrial Category Flat Bootstrap Responsive Web Template Mobile website template Free">
-
-
               </center>
-
 
           </div>
 
           <div class="col-md-8">
-
+            <div id="_AJAX_NOT_"></div>
             <blockquote>
 
             <ul class="list-group">
-  <li class="list-group-item">Tipo de celular       :  <?php echo $_tipos[$_modelos[$_productos[$_GET['id']]['COD_MOD']]['COD_MAR']]['DES_TIPO']?>      </li>
-  <li class="list-group-item">Modelo                :  <?php echo $_modelos[$_productos[$_GET['id']]['COD_MOD']]['DES_MOD']?>     </li>
+
+  <li class="list-group-item" >Tipo de celular       :  <span id="marca"><?php echo $_tipos[$_modelos[$_productos[$_GET['id']]['COD_MOD']]['COD_MAR']]['DES_TIPO']?></span>      </li>
+  <li class="list-group-item" >Modelo                :  <span id="modelo"><?php echo $_modelos[$_productos[$_GET['id']]['COD_MOD']]['DES_MOD']?>  </span>   </li>
+  <li class="list-group-item" >Codigo             :  <span id="ida"><?php echo$_GET['id']?></span></li>
   <li class="list-group-item">Estado                :   <?php if( $_productos[$_GET['id']]['EST_PROD']=='U'){echo 'Usado';}else{echo 'Nuevo';}?>     </li>
   <li class="list-group-item">Precio                :    <span>S/</span><?php echo $_productos[$_GET['id']]['PRE_PROD']?><span>.00 </span>    </li>
-  <li class="list-group-item">Situacion             :   <?php if( $_productos[$_GET['id']]['SIT_PROD']=='A'){echo 'Activo';}else if($_productos[$_GET['id']]['SIT_PROD']=='R'){echo 'Reservado';}else{echo 'Vendido';}?>     </li>
+  <li class="list-group-item">Situacion             :   <span id="sit"><?php if( $_productos[$_GET['id']]['SIT_PROD']=='A'){echo 'Activo';}else if($_productos[$_GET['id']]['SIT_PROD']=='R'){echo 'Reservado';}else{echo 'Vendido';}?></span>     </li>
   <li class="list-group-item">Descripcion             :   <?php echo $_productos[$_GET['id']]['DES_PROD']?>     </li>
   <li class="list-group-item">Fecha de publicacion  :    <?php echo $_productos[$_GET['id']]['FEC_PROD']?>    </li>
-  <li class="list-group-item">Publicado por         :    <?php echo $_users[$_productos[$_GET['id']]['COD_USU']]['NOM_USU'];?><span> </span><?php echo $_users[$_productos[$_GET['id']]['COD_USU']]['APE_USU'];?>    </li>
-
-
+  <li class="list-group-item" >Publicado por         :    <?php echo $_users[$_productos[$_GET['id']]['COD_USU']]['NOM_USU'];?><span> </span><?php echo $_users[$_productos[$_GET['id']]['COD_USU']]['APE_USU'];?>
+    <span id="usuario"><?php echo $_productos[$_GET['id']]['COD_USU'];?></span>  </li>
 
 </ul>
-
-
-
-
             </blockquote>
 
-
-
             <br>
-          <a href="?view=notificaciones">  <button type="submit" class="btn btn-primary">Notificar interes</button></a>
+           <button type="submit" class="btn btn-primary" <?php if(!isset($_SESSION['app_id'])){echo'data-toggle="modal" data-target="#Login"';}else{echo'onclick="goNot()"';}?> >Notificar interes</button>
 
           </div>
         </div>
       </div>
     </div>
   </div>
+  <script src="views/app/js/notificacion.js"></script>
+
 </section>
 <!-- footer, llama a html index/overall/footer.php-->
 <?php include(HTML_DIR . 'overall/footer.php'); ?>

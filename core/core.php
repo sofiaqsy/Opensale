@@ -42,6 +42,8 @@ require('core/bin/functions/Tipos.php');
 require('core/bin/functions/Subir_fichero.php');
 require('core/bin/functions/Productos_usuarios.php');
 require('core/bin/functions/Marcasporid.php');
+require('core/bin/functions/Modelosporid.php');
+require('core/bin/functions/EmailNotificacion.php');
 
 
 

@@ -58,13 +58,13 @@
 
                   <script>
                   $(document).ready(function(){
-
                     $('#marca').change(function() {
                       var id=$('#marca').val();
-                      $('#modelo').load('?view=datos&id='+id);
-
-                  });
+                      $('#modelo').load('?view=datos&mode=combo&id='+id);
+                    });
                         });
+
+
                   </script>
 
                   <select class="form-control" name='marca' id='marca'>
@@ -86,10 +86,11 @@
                 <label for="inputEmail" class="col-lg-2 control-label">Modelo</label>
                 <div class="col-lg-10">
 
-                  <div >
-                    <select class='form-control' name='marca' id='modelo'>
-                    </select>
-                  </div>
+
+                      <select class='form-control' name='modelo' id='modelo'>
+                          <option value="OpModeloTodos">TODOS</option>
+                        </select>
+
 
                 </div>
               </div>

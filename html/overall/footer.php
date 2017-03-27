@@ -74,7 +74,6 @@
 		});
     });
 </script>
-
   <script src="views/web/assets/jquery/jquery.min.js"></script>
   <script src="views/bootstrap/js/bootstrap.min.js"></script>
   <script src="views/smooth-scroll/SmoothScroll.js"></script>

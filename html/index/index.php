@@ -9,22 +9,6 @@
   <section class="mbr-section mbr-after-navbar">
 <div class="mbr-section__container container mbr-section__container--isolated">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <?php
     if(isset($_GET['success'])) {
       echo '<div class="alert alert-dismissible alert-success">
@@ -75,18 +59,22 @@
 
         <script>
         $(document).ready(function(){
-
           $('#marca').change(function() {
-
-
             var id=$('#marca').val();
             $('#modelo').load('?view=datos&mode=combo&id='+id);
             $('#poreleccion').load('?view=datos&mode=mostrar&id='+id);
 
+            $('#modelo').change(function() {
+              var idmod=$('#modelo').val();
+              $('#poreleccion').load('?view=datos&mode=mostrar&id_mod='+idmod+'&id_mar='+id);
+
+          });
+          });
 
 
-        });
+
               });
+
 
         </script>
 
@@ -103,21 +91,15 @@
             ?>
         </select>
 
-
-
-
-
             <br> <!--salto de linea -->
-    <div class="grid_1_of_2 images_1_of_2">
-      Modelo
-    </div>
+            Modelo
             <br> <!--salto de linea -->
 
-      <div >
-        <select class='form-control' name='marca' id='modelo'>
+
+        <select class='form-control' name='modelo' id='modelo'>
           <option value="OpModeloTodos">TODOS</option>
         </select>
-      </div>
+
 
 
     </div>
@@ -129,14 +111,14 @@
 
 
 
-
       <div class="section group" id="poreleccion" name="poreleccion">
         <?php foreach($_productos as $id_producto => $content_array) :?>
 
-              <div class="grid_1_of_3 images_1_of_3">
+              <div class="grid_1_of_3 images_1_of_3 style="width:50px;" ">
                 <a href="?view=detalles&id=<?php echo $id_producto?>">
                   <img src="<?php echo CARP_IMG ?>img3.jpg" title="Adamant an Industrial Category Flat Bootstrap Responsive Web Template" alt="Adamant an Industrial Category Flat Bootstrap Responsive Web Template Mobile website template Free">
-                  <h2><?php echo $_tipos[$_modelos[$_productos[$id_producto]['COD_MOD']]['COD_MAR']]['DES_TIPO'] ?>- <?php echo $_modelos[$_productos[$id_producto]['COD_MOD']]['DES_MOD'] ?><br>S/<?php echo $_productos[$id_producto]['PRE_PROD'] ?>.00</h2>
+                  <center><p><?php echo $_tipos[$_modelos[$_productos[$id_producto]['COD_MOD']]['COD_MAR']]['DES_TIPO'] ?>- <?php echo $_modelos[$_productos[$id_producto]['COD_MOD']]['DES_MOD'] ?><br>S/<?php echo $_productos[$id_producto]['PRE_PROD'] ?>.00
+                     <?php if($_productos[$id_producto]['SIT_PROD']=='R'){echo 'Reservado';}?></p></center>
                 </a>
           </div>
         <?php endforeach; ?>

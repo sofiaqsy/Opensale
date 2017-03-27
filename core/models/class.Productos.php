@@ -17,13 +17,13 @@ class Productos {
   }
 
   private function Errors($url) {
+
     try {
-          if(empty($_POST['estado'] || empty($_POST['precio']))) {
+          if(empty($_POST['estado'] ) || empty($_POST['precio']) || empty($_POST['descripcion']) || empty($_POST['marca']) || empty($_POST['campofotografia']) ) {
             throw new Exception(1);
           } else {
-
             $this->COD_USU=$this->db->real_escape_string($_SESSION['app_id']);
-            $this->COD_MOD=$this->db->real_escape_string($_POST['marca']);
+            $this->COD_MOD=$this->db->real_escape_string($_POST['modelo']);
             $this->EST_PROD=$this->db->real_escape_string($_POST['estado']);
             $this->IMA_PROD=$this->db->real_escape_string($_POST['campofotografia']);
             $this->PRE_PROD=$this->db->real_escape_string($_POST['precio']);
@@ -34,6 +34,7 @@ class Productos {
 
           }
         } catch(Exception $error) {
+
           header('location: '.$url .$error->getMessage());
           exit;
         }
@@ -49,15 +50,14 @@ class Productos {
 
     $this->Errors('?view=productos&mode=add&error=');
     $this->db->query("INSERT INTO producto(COD_USU,EST_PROD,IMA_PROD,PRE_PROD,SIT_PROD,COD_MOD,DES_PROD) VALUES ('$this->COD_USU','$this->EST_PROD','$this->IMA_PROD','$this->PRE_PROD','$this->SIT_PROD','$this->COD_MOD','$this->DES_PROD');");
-    subir_fichero(CARP_IMG,$this->IMA_PROD);
-    echo CARP_IMG;
     header('location: ?view=productos&mode=add&success=true');
+
 
   }
 
   public function Edit() {
     $this->id = $_GET['id'];
-    $this->Errors('?view=productos&mode=add&id='.$this->id.'&error=');
+    $this->Errors('?view=productos&mode=edit&id='.$this->id.'&error=');
     $this->db->query("UPDATE producto SET EST_PROD='$this->EST_PROD',IMA_PROD='$this->IMA_PROD',PRE_PROD='$this->PRE_PROD',COD_MOD='$this->COD_MOD' ,DES_PROD='$this->DES_PROD'  WHERE COD_PROD='$this->id';");
     header('location: ?view=productos&mode=edit&id='.$this->id.'&success=true');
   }
