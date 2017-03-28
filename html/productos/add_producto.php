@@ -50,7 +50,7 @@
 
       <div class="row cajas">
         <div class="col-md-12">
-          <form class="form-horizontal" action="?view=productos&mode=add" method="POST" enctype="application/x-www-form-urlencoded">
+          <form class="form-horizontal" action="?view=productos&mode=add" method="POST" enctype="multipart/form-data">
             <fieldset>
               <div class="form-group">
                 <label for="inputEmail" class="col-lg-2 control-label">Tipo de celular</label>
@@ -61,11 +61,8 @@
                     $('#marca').change(function() {
                       var id=$('#marca').val();
                       $('#modelo').load('?view=datos&mode=combo&id='+id);
-
                     });
                         });
-
-
                   </script>
 
                   <select class="form-control" name='marca' id='marca'>

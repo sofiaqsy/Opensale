@@ -782,6 +782,10 @@ margin-top: 30px;
 }
 .group {
 }
+.images_1_of_3 {
+  width: 31.6%;
+
+}
 .grid_1_of_3, .grid_1_of_4 {
     display: block;
     float: left;
@@ -793,7 +797,7 @@ margin-top: 30px;
 .images_1_of_3, .images_1_of_4 {
     box-shadow: 0 40px 20px -40px rgb(133, 133, 133);
     padding: 0;
-  
+
 }
 .images_1_of_4 {
     width: 23.5%;

@@ -25,7 +25,7 @@
             <div class="col-md-4">
               <center>
 
-                    <img src="<?php echo CARP_IMG ?>img3.jpg" title="Adamant an Industrial Category Flat Bootstrap Responsive Web Template" alt="Adamant an Industrial Category Flat Bootstrap Responsive Web Template Mobile website template Free">
+                    <img src="<?php echo CARP_IMG.$_productos[$_GET['id']]['IMA_PROD'] ?>" style="width: 100%;" title="Adamant an Industrial Category Flat Bootstrap Responsive Web Template" alt="Adamant an Industrial Category Flat Bootstrap Responsive Web Template Mobile website template Free">
               </center>
 
           </div>

@@ -116,7 +116,7 @@
 
               <div class="grid_1_of_3 images_1_of_3 style="width:50px;" ">
                 <a href="?view=detalles&id=<?php echo $id_producto?>">
-                  <img src="<?php echo CARP_IMG ?>img3.jpg" title="Adamant an Industrial Category Flat Bootstrap Responsive Web Template" alt="Adamant an Industrial Category Flat Bootstrap Responsive Web Template Mobile website template Free">
+                  <img src="<?php echo CARP_IMG.$_productos[$id_producto]['IMA_PROD']?>" title="Adamant an Industrial Category Flat Bootstrap Responsive Web Template" alt="Adamant an Industrial Category Flat Bootstrap Responsive Web Template Mobile website template Free">
                   <center><p><?php echo $_tipos[$_modelos[$_productos[$id_producto]['COD_MOD']]['COD_MAR']]['DES_TIPO'] ?>- <?php echo $_modelos[$_productos[$id_producto]['COD_MOD']]['DES_MOD'] ?><br>S/<?php echo $_productos[$id_producto]['PRE_PROD'] ?>.00
                      <?php if($_productos[$id_producto]['SIT_PROD']=='R'){echo 'Reservado';}?></p></center>
                 </a>

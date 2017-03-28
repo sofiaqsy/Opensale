@@ -70,10 +70,10 @@
                      <ul class="dropdown-menu">
                       <?php if( $_productos[$id_producto]['SIT_PROD']=='A'):?>
                        <li><a href="?view=productos&mode=edit&id=<?php echo$_productos[$id_producto]['COD_PROD']?>">Editar</a></li>
-                       <li><a onclick="DeleteItem(\'¿Está seguro de eliminar esta categoría?\',\'?view=productos&mode=delete&id=<?php echo $_productos[$id_producto]['COD_PROD']?>\')">Eliminar</a></li>
+                       <li><a onclick="DeleteItem('¿Está seguro de eliminar esta categoría?','?view=productos&mode=delete&id=<?php echo $_productos[$id_producto]['COD_PROD']?>')">Eliminar</a></li>
                      <?php else :?>
                        <li><a href="?view=productos&mode=edit&id=<?php echo$_productos[$id_producto]['COD_PROD']?>">Cancelar reserva</a></li>
-                       <li><a onclick="DeleteItem(\'¿Está seguro de eliminar esta categoría?\',\'?view=productos&mode=delete&id=<?php echo $_productos[$id_producto]['COD_PROD']?>\')">VENDIDO</a></li>
+                       <li><a >VENDIDO</a></li>
                      <?php endif;?>
                      </ul>
                    </div>
