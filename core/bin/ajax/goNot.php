@@ -1,14 +1,20 @@
 <?php
 if($_SESSION['app_id']!="" && $_POST['id_prod']!=""){
+  if($_SESSION['app_id']!=$_productos[$_POST['id_prod']]['COD_USU']){
 $db = new Conexion();
 $usuarioNotificadornombre=$_users[$_SESSION['app_id']]['NOM_USU'];
 $usuarioNotificadorapellido=$_users[$_SESSION['app_id']]['APE_USU'];
 $usuarioNotificadorcorreo=$_users[$_SESSION['app_id']]['COR_USU'];
+$usuarioNotificadorid=$_SESSION['app_id'];
 
 $correoPublicador=$_users[$_POST['id']]['COR_USU'];
 $nombrePublicador=$_users[$_POST['id']]['NOM_USU'];
 $marcaPublicador=$_POST['marca'];
 $modeloPublicador=$_POST['modelo'];
+
+$codProd=$_POST['id_prod'];
+$preProd=$_productos[$_POST['id_prod']]['PRE_PROD'];
+
 
 $id_prod=$_POST['id_prod'];
   $link = APP_URL .'?view=perfil&id=' .$_POST['id'];
@@ -46,13 +52,25 @@ $id_prod=$_POST['id_prod'];
       <button type="button" class="close" data-dismiss="alert">x</button>
       <strong>ERROR:</strong> ' . $mail->ErrorInfo . ' </div>';
   } else {
+    $fecha = date('Y/m/d', time());
     $db->query("UPDATE producto SET SIT_PROD='R' WHERE COD_PROD='$id_prod';");
+    $db->query("INSERT INTO movimiento(TIP_MOV,FEC_MOV,COD_USU) VALUES ('Reserva','$fecha','$usuarioNotificadorid')");
+    $id="";
+    $sql = $db->query("SELECT COD_MOV from movimiento where COD_USU='$usuarioNotificadorid';");
+    while($fila=$db->recorrer($sql)){
+      $id=$fila[0];}
+    $db->query("INSERT INTO detalle_movimiento(COD_MOV,COD_PROD,PRE_PROD) VALUES ('$id','$codProd','$preProd')");
+
     $HTML = '<div class="alert alert-dismissible alert-success">
       <strong>Enviado!!</strong> El producto ha sido reservado, espere la respuesta del vendedor </div>' ;
   }
 
 
   $db->close();
+}else{  $HTML = '<div class="alert alert-dismissible alert-danger">
+  <button type="button" class="close" data-dismiss="alert">x</button>
+  <strong>ERROR : </strong>No puedes reservar tu propio producto<br> Daaa
+</div>';}
 }else{
   $HTML = '<div class="alert alert-dismissible alert-danger">
   <button type="button" class="close" data-dismiss="alert">x</button>

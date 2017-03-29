@@ -3,7 +3,7 @@
 if(!empty($_POST['user']) and !empty($_POST['pass'])) {
   $db = new Conexion();
   $data = $db->real_escape_string($_POST['user']);
-  $pass = $_POST['pass'];
+  $pass = Encrypt($_POST['pass']);
   $sql = $db->query("SELECT COD_USU FROM usuario WHERE  COR_USU='$data' AND PAS_USU='$pass' LIMIT 1;");
 
   if($db->rows($sql) > 0) {

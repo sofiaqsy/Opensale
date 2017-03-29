@@ -83,6 +83,7 @@
             if(false != $_tipos) {
                 echo '<option value="OpMarcaTodos">TODOS</option>';
               foreach($_tipos as $id_tipo => $array_tipo) {
+
                 echo '<option value="'.$id_tipo.'">'.$_tipos[$id_tipo]['DES_TIPO'].'</option>';
               }
             }else{
@@ -112,16 +113,17 @@
 
 
       <div class="section group" id="poreleccion" name="poreleccion">
-        <?php foreach($_productos as $id_producto => $content_array) :?>
-
-              <div class="grid_1_of_3 images_1_of_3 style="width:50px;" ">
+        <?php foreach($_productos as $id_producto => $content_array) :
+          if($_productos[$id_producto]['SIT_PROD']!='V'):
+          ?>
+              <div class="grid_1_of_3 images_1_of_3 style="width:50px; max-height:100px;" ">
                 <a href="?view=detalles&id=<?php echo $id_producto?>">
                   <img src="<?php echo CARP_IMG.$_productos[$id_producto]['IMA_PROD']?>" title="Adamant an Industrial Category Flat Bootstrap Responsive Web Template" alt="Adamant an Industrial Category Flat Bootstrap Responsive Web Template Mobile website template Free">
                   <center><p><?php echo $_tipos[$_modelos[$_productos[$id_producto]['COD_MOD']]['COD_MAR']]['DES_TIPO'] ?>- <?php echo $_modelos[$_productos[$id_producto]['COD_MOD']]['DES_MOD'] ?><br>S/<?php echo $_productos[$id_producto]['PRE_PROD'] ?>.00
                      <?php if($_productos[$id_producto]['SIT_PROD']=='R'){echo 'Reservado';}?></p></center>
                 </a>
           </div>
-        <?php endforeach; ?>
+        <?php endif; endforeach; ?>
       </div>
 
 

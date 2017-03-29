@@ -44,6 +44,7 @@ require('core/bin/functions/Productos_usuarios.php');
 require('core/bin/functions/Marcasporid.php');
 require('core/bin/functions/Modelosporid.php');
 require('core/bin/functions/EmailNotificacion.php');
+require('core/bin/functions/MovimientoUsuario.php');
 
 
 
