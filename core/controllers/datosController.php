@@ -7,7 +7,11 @@
     break;
 
     case 'mostrar':
-    include('core/bin/indexcomplemento/mostrar.php');
+    if(isset($_GET['id'])){
+    include('core/bin/indexcomplemento/mostrar.php');}
+
+    if(isset($_GET['id_mod'])){include('core/bin/indexcomplemento/modelos.php');}
+
     break;
 }
 ?>

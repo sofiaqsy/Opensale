@@ -34,14 +34,14 @@
 
 <div class="row categorias_con_foros">
   <div class="col-sm-12">
-      <div class="row titulo_categoria">Gestión de Productos</div>
+      <div class="row titulo_categoria">Productos publicados</div>
 
       <div class="row cajas">
         <div class="col-md-12">
-          <?php
 
-          if(false != $_productos_usuarios) {
-           $HTML = '<table class="table"><thead><tr>
+
+        <?php  if(false != $_productos_usuarios):  ?>
+          <table class="table"><thead><tr>
            <th style="width: 10%">Codigo</th>
            <th>Marca</th>
            <th>Modelo</th>
@@ -51,19 +51,93 @@
            <th>Publicado</th>
            <th style="width: 20%">Acciones</th>
            </tr></thead>
-           <tbody>';
+           <tbody>
 
-            foreach($_productos_usuarios as $id_producto => $content_array) {
+          <?php  foreach($_productos_usuarios as $id_producto => $content_array) :?>
+                  <tr>
+                  <td><?php echo $_productos_usuarios[$id_producto]['COD_PROD'];?></td>
+                  <td><?php  echo $_tipos[$_modelos[$_productos_usuarios[$id_producto]['COD_MOD']]['COD_MAR']]['DES_TIPO'];?></td>
+                  <td><?php  echo $_modelos[$_productos[$id_producto]['COD_MOD']]['DES_MOD'];?></td>
+                  <td><?php echo $_productos[$id_producto]['EST_PROD'];?></td>
+                  <td> <?php echo $_productos[$id_producto]['PRE_PROD'];?></td>
+                  <td><?php if( $_productos[$id_producto]['SIT_PROD']=='A'){echo 'Activo';}else if($_productos[$id_producto]['SIT_PROD']=='R'){echo 'Reservado';}else{echo 'Vendido';}?></td>
+                  <td><?php echo $_productos[$id_producto]['FEC_PROD'];?></td>
+
+                  <td>
+                    <?php if($_productos[$id_producto]['SIT_PROD']!='V'):?>
+                    <div class="btn-group">
+                     <a  class="btn btn-primary">Acciones</a>
+                     <a  class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+                     <ul class="dropdown-menu">
+                      <?php if( $_productos[$id_producto]['SIT_PROD']=='A'):?>
+                       <li><a href="?view=productos&mode=edit&id=<?php echo$_productos[$id_producto]['COD_PROD']?>">Editar</a></li>
+                       <li><a onclick="DeleteItem('¿Está seguro de eliminar este producto?','?view=productos&mode=delete&id=<?php echo $_productos[$id_producto]['COD_PROD']?>')">Eliminar</a></li>
+                     <?php else :?>
+                       <li><a onclick="DeleteItem('¿Está seguro de cancelar la reserva?','?view=movimiento&mode=delete&id=<?php echo $_movimientousuario[$id_producto]['COD_MOV']?>&idprod=<?php echo $_productos[$id_producto]['COD_PROD']?>')">Cancelar la reserva</a></li>
+                       <li><a onclick="DeleteItem('FELICITACIONES POR SU VENTA!','?view=movimiento&mode=confirmar&id=<?php echo $_movimientousuario[$id_producto]['COD_PROD']?>&idprod=<?php echo $_productos[$id_producto]['COD_PROD']?>')">REPORTAR COMO VENTA COMPLETADA</a></li>
+                     <?php endif;?>
+                     </ul>
+                   </div>
+                 <?php else: echo 'VENDIDO'; endif ?>
+                  </td>
+                </tr>
 
 
-                $HTML .= '<tr>
-                  <td>'.$_productos_usuarios[$id_producto]['COD_PROD'].'</td>
-                  <td>'.$_tipos[$_modelos[$_productos_usuarios[$id_producto]['COD_MOD']]['COD_MAR']]['DES_TIPO'].'</td>
-                  <td>'.$_modelos[$_productos[$id_producto]['COD_MOD']]['DES_MOD'].'</td>
-                  <td>'.$_productos[$id_producto]['EST_PROD'].'</td>
-                  <td>'.$_productos[$id_producto]['PRE_PROD'].'</td>
-                  <td>'.$_productos[$id_producto]['SIT_PROD'].'</td>
-                  <td>'.$_productos[$id_producto]['FEC_PROD'].'</td>
+            <?php
+                endforeach; ?>
+            </tbody></table>
+
+        <?php
+              else:?>
+
+            <div class="alert alert-dismissible alert-info"><strong>INFORMACIÓN: </strong> Todavía no se ha publicado un producto.</div>
+<?php endif;?>
+
+        </div>
+      </div>
+  </div>
+</div>
+
+
+
+<div class="row categorias_con_foros">
+  <div class="col-sm-12">
+      <div class="row titulo_categoria">Productos interesados/notificados </div>
+
+      <div class="row cajas">
+        <div class="col-md-12">
+
+
+        <?php  if(false != $_movimientousuario) :
+          $cntmovv=0;
+          foreach($_movimientousuario as $id_movimientousuario => $content_array){
+            if($_movimientousuario[$id_movimientousuario]['TIP_MOV']!='Venta'){
+              $cntmovv++;
+            }
+          }
+            if($cntmovv!=0):?>
+          <table class="table"><thead><tr>
+           <th style="width: 10%">Id de movimiento</th>
+           <th>Producto</th>
+           <th>Usuario</th>
+           <th>Monto total</th>
+           <th>Fecha</th>
+           <th style="width: 20%">Acciones</th>
+           </tr></thead>
+           <tbody>
+
+          <?php  foreach($_movimientousuario as $id_movimientousuario=> $content_array) :
+            if($_movimientousuario[$id_movimientousuario]['TIP_MOV']!='Venta'):?>
+
+
+                  <tr>
+                  <td><?php echo $_movimientousuario[$id_movimientousuario]['COD_MOV'];?></td>
+                  <td><?php   echo $_tipos[$_modelos[$_productos[$_movimientousuario[$id_movimientousuario]['COD_PROD']]['COD_MOD']]['COD_MAR']]['DES_TIPO'];?>
+                     <span> </span><?php   echo $_modelos[$_productos[$_movimientousuario[$id_movimientousuario]['COD_PROD']]['COD_MOD']]['DES_MOD'];?> </td>
+                  <td><?php  echo $_users[$_productos[$_movimientousuario[$id_movimientousuario]['COD_PROD']]['COD_USU']]['NOM_USU'];?>
+                      <span> </span><?php  echo $_users[$_productos[$_movimientousuario[$id_movimientousuario]['COD_PROD']]['COD_USU']]['APE_USU'];?></td>
+                  <td><?php echo $_productos[$_movimientousuario[$id_movimientousuario]['COD_PROD']]['PRE_PROD'];?></td>
+                  <td> <?php echo $_movimientousuario[$id_movimientousuario]['FEC_MOV'];?></td>
 
                   <td>
                     <div class="btn-group">
@@ -71,20 +145,93 @@
                      <a  class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
                      <ul class="dropdown-menu">
 
-                       <li><a href="?view=productos&mode=edit&id='.$_productos[$id_producto]['COD_PROD'].'">Editar</a></li>
-                       <li><a onclick="DeleteItem(\'¿Está seguro de eliminar esta categoría?\',\'?view=productos&mode=delete&id='.$_productos[$id_producto]['COD_PROD'].'\')">Eliminar</a></li>
+                       <li><a onclick="DeleteItem('¿Está seguro de cancelar tu reserva?','?view=movimiento&mode=delete&id=<?php echo $_movimientousuario[$id_movimientousuario]['COD_MOV']?>&idprod=<?php echo $_movimientousuario[$id_movimientousuario]['COD_PROD']?>')">Cancelar</a></li>
+                       <li><a onclick="DeleteItem('¿Está seguro de CONFIRMAR LA COMPRA DE ESTE PRODUCTO?','?view=movimiento&mode=confirmar&id=<?php echo $_movimientousuario[$id_movimientousuario]['COD_MOV']?>&idprod=<?php echo $_movimientousuario[$id_movimientousuario]['COD_PROD']?>')">Confirmar Compra exitosa</a></li>
+
+
                      </ul>
                    </div>
                   </td>
-                </tr>';
-            }
-            $HTML .= '</tbody></table>';
-          } else {
-            $HTML = '<div class="alert alert-dismissible alert-info"><strong>INFORMACIÓN: </strong> Todavía no se ha subido un producto.</div>';
-          }
+                </tr>
+            <?php endif; endforeach; ?>
+            </tbody></table>
+            <?php
+          else:
+            ?>
+            <div class="alert alert-dismissible alert-info"><strong>INFORMACIÓN: </strong> Todavía no se ha adquirido un producto.</div>
 
-          echo $HTML;
-          ?>
+          <?php  endif;?>
+        <?php
+              else:?>
+
+            <div class="alert alert-dismissible alert-info"><strong>INFORMACIÓN: </strong> Todavía no se ha notificado a un producto.</div>
+<?php endif;?>
+
+        </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+<div class="row categorias_con_foros">
+  <div class="col-sm-12">
+      <div class="row titulo_categoria">Productos adquiridos </div>
+
+      <div class="row cajas">
+        <div class="col-md-12">
+
+
+
+        <?php  if(false != $_movimientousuario) :
+          $cntmovv=0;
+          foreach($_movimientousuario as $id_movimientousuario => $content_array){
+            if($_movimientousuario[$id_movimientousuario]['TIP_MOV']=='Venta'){
+              $cntmovv++;
+            }
+          }
+            if($cntmovv!=0):
+           ?>
+          <table class="table"><thead><tr>
+            <th style="width: 10%">Id de movimiento</th>
+            <th>Producto</th>
+            <th>Usuario</th>
+            <th>Monto total</th>
+            <th>Fecha venta</th>
+           </tr></thead>
+           <tbody>
+
+          <?php  foreach($_movimientousuario as $id_movimientousuario => $content_array) :
+                  if($_movimientousuario[$id_movimientousuario]['TIP_MOV']=='Venta'):?>
+                  <tr>
+                    <td><?php echo $_movimientousuario[$id_movimientousuario]['COD_MOV'];?></td>
+                    <td><?php   echo $_tipos[$_modelos[$_productos[$_movimientousuario[$id_movimientousuario]['COD_PROD']]['COD_MOD']]['COD_MAR']]['DES_TIPO'];?>
+                       <span> </span><?php   echo $_modelos[$_productos[$_movimientousuario[$id_movimientousuario]['COD_PROD']]['COD_MOD']]['DES_MOD'];?> </td>
+                    <td><?php  echo $_users[$_productos[$_movimientousuario[$id_movimientousuario]['COD_PROD']]['COD_USU']]['NOM_USU'];?>
+                        <span> </span><?php  echo $_users[$_productos[$_movimientousuario[$id_movimientousuario]['COD_PROD']]['COD_USU']]['APE_USU'];?></td>
+                    <td><?php echo $_productos[$_movimientousuario[$id_movimientousuario]['COD_PROD']]['PRE_PROD'];?></td>
+                    <td> <?php echo $_movimientousuario[$id_movimientousuario]['FEC_MOV'];?></td>
+
+
+                </tr>
+
+            <?php
+            endif;
+          endforeach; ?>
+            </tbody></table>
+            <?php
+          else:
+            ?>
+            <div class="alert alert-dismissible alert-info"><strong>INFORMACIÓN: </strong> Todavía no se ha adquirido un producto.</div>
+
+          <?php  endif;?>
+        <?php
+              else:?>
+
+            <div class="alert alert-dismissible alert-info"><strong>INFORMACIÓN: </strong> Todavía no se ha adquirido un producto.</div>
+<?php endif;?>
+
         </div>
       </div>
   </div>

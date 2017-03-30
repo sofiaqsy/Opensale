@@ -2,11 +2,14 @@
 
 if(isset($_SESSION['app_id'])) {
 
+
+
   $isset_id = isset($_GET['id']) and is_numeric($_GET['id']) and $_GET['id'] >= 1;
 
   require('core/models/class.productos.php');
   $productos=new Productos();
-  $_productos_usuarios=Productos_usuarios($_SESSION['app_id']);
+
+
   switch (isset($_GET['mode']) ? $_GET['mode'] : null) {
     case 'add':
 
@@ -37,6 +40,9 @@ if(isset($_SESSION['app_id'])) {
       }
     break;
     default:
+    $_productos_usuarios=Productos_usuarios($_SESSION['app_id']);
+    $_movimientousuario=MovimientoUsuario($_SESSION['app_id']);
+
       include(HTML_DIR . 'productos/all_productos.php');
     break;
   }

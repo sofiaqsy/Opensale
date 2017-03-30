@@ -1,26 +1,34 @@
  <?php
-function Subir_fichero($directorio_destino, $nombre_fichero)
+function Subir_fichero($directorio, $nombre_img,$tipo,$tamano)
 {
-    $tmp_name = $_FILES[$nombre_fichero]['tmp_name'];
-    //si hemos enviado un directorio que existe realmente y hemos subido el archivo
-    if (is_dir($directorio_destino) && is_uploaded_file($tmp_name))
-    {
-        $img_file = $_FILES[$nombre_fichero]['name'];
-        $img_type = $_FILES[$nombre_fichero]['type'];
-        echo 1;
-        // Si se trata de una imagen
-        if (((strpos($img_type, "gif") || strpos($img_type, "jpeg") ||
- strpos($img_type, "jpg")) || strpos($img_type, "png")))
-        {
-            //¿Tenemos permisos para subir la imágen?
-            echo 2;
-            if (move_uploaded_file($tmp_name, $directorio_destino . '/' . $img_file))
-            {
-                return true;
-            }
-        }
-    }
-    //Si llegamos hasta aquí es que algo ha fallado
-    return false;
+
+
+//Si existe imagen y tiene un tamaño correcto
+if (($nombre_img == !NULL) && ($_FILES['imagen']['size'] <= 200000))
+{
+ //indicamos los formatos que permitimos subir a nuestro servidor
+ if (($_FILES["imagen"]["type"] == "image/gif")
+ || ($_FILES["imagen"]["type"] == "image/jpeg")
+ || ($_FILES["imagen"]["type"] == "image/jpg")
+ || ($_FILES["imagen"]["type"] == "image/png"))
+ {
+    // Ruta donde se guardarán las imágenes que subamos
+
+    // Muevo la imagen desde el directorio temporal a nuestra ruta indicada anteriormente
+    move_uploaded_file($_FILES['imagen']['tmp_name'],$directorio.$nombre_img);
+  }
+  else
+  {
+     //si no cumple con el formato
+     echo "No se puede subir una imagen con ese formato ";
+  }
+}
+else
+{
+ //si existe la variable pero se pasa del tamaño permitido
+ if($nombre_img == !NULL) echo "La imagen es demasiado grande ";
+}
+
+
 }
 ?>

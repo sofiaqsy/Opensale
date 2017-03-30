@@ -4,7 +4,9 @@
             <div class="mbr-navbar__container">
                 <div class="mbr-navbar__column mbr-navbar__column--s mbr-navbar__brand">
                     <span class="mbr-navbar__brand-link mbr-brand mbr-brand--inline">
-                        <span class="mbr-brand__logo"><a href="#"><img class="mbr-navbar__brand-img mbr-brand__img" src="" ><span>Opensale</span></a></span>
+                        <span class="mbr-brand__logo" ><a href="#">
+                          <img class="mbr-navbar__brand-img mbr-brand__img"  href="views/images/Opensale.png"  >
+                            <img class="mbr-navbar__brand-img mbr-brand__img"  href="views/images/Opensale.png"  ><span>Opensale</span></a></span>
                     </span>
                 </div>
                 <div class="mbr-navbar__hamburger mbr-hamburger text-white"><span class="mbr-hamburger__line"></span></div>

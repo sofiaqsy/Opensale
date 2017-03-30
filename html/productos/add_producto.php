@@ -50,7 +50,7 @@
 
       <div class="row cajas">
         <div class="col-md-12">
-          <form class="form-horizontal" action="?view=productos&mode=add" method="POST" enctype="application/x-www-form-urlencoded">
+          <form class="form-horizontal" action="?view=productos&mode=add" method="POST" enctype="multipart/form-data">
             <fieldset>
               <div class="form-group">
                 <label for="inputEmail" class="col-lg-2 control-label">Tipo de celular</label>
@@ -58,12 +58,10 @@
 
                   <script>
                   $(document).ready(function(){
-
                     $('#marca').change(function() {
                       var id=$('#marca').val();
-                      $('#modelo').load('?view=datos&id='+id);
-
-                  });
+                      $('#modelo').load('?view=datos&mode=combo&id='+id);
+                    });
                         });
                   </script>
 
@@ -86,10 +84,11 @@
                 <label for="inputEmail" class="col-lg-2 control-label">Modelo</label>
                 <div class="col-lg-10">
 
-                  <div >
-                    <select class='form-control' name='marca' id='modelo'>
-                    </select>
-                  </div>
+
+                      <select class='form-control' name='modelo' id='modelo'>
+                          <option value="OpModeloTodos">TODOS</option>
+                        </select>
+
 
                 </div>
               </div>
@@ -120,7 +119,7 @@
               <div class="form-group">
                 <label for="inputEmail" class="col-lg-2 control-label"> Imagen</label>
                 <div class="col-lg-10">
-                  <input id="campofotografia" name="campofotografia" type="file" />
+                  <input id="imagen" name="imagen" type="file" />
 
                 </div>
               </div>
