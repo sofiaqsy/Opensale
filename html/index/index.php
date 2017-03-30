@@ -11,20 +11,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <?php
     if(isset($_GET['success'])) {
       echo '<div class="alert alert-dismissible alert-success">
@@ -71,9 +57,8 @@
           Tipos de Celulares
         </div>
             <br><!--salto de linea -->
-<<<<<<< HEAD
-        <select class="form-control">
-=======
+
+
 
 
         <script>
@@ -94,7 +79,7 @@
         </script>
 
         <select class="form-control" name='marca' id='marca'>
->>>>>>> dcd74da53c2e768d87e44e6041c38caf74d5c9cc
+
             <?php
             if(false != $_tipos) {
                 echo '<option value="OpMarcaTodos">TODOS</option>';
@@ -146,10 +131,7 @@
         <?php endforeach; ?>
       </div>
 
-
-
       </div>
-
 
 </section>
 

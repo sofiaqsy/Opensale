@@ -10,7 +10,7 @@ date_default_timezone_set('America/Caracas');
 define('DB_HOST','localhost');
 define('DB_USER','root');
 define('DB_PASS','');
-define('DB_NAME','opensale1');
+define('DB_NAME','opensale');
 
 
 #Constantes de la APP
